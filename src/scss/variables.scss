@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+
+$font-size-root: 16px;
+$body-font-family: 'Lora', sans-serif !default;
+$card-border-radius: 10px;
+$chip-label-border-radius: 0;
+
+// For updating SASS lists
+$ripple-animation-transition-in: none;
+$ripple-animation-transition-out: none;
+$ripple-animation-visible-opacity: none;
+
+@import '~vuetify/src/styles/styles.sass';
+
+$material-dark: (
+        'app-bar': #321231,
+        'bottom-navigation': #000000,
+        'background': #000000,
+        'cards': #000000,
+        'navigation-drawer': #000000,
+        'toolbar': #000000
+);
