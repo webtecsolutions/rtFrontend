@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost&family=Lora&display=swap');
 
 $font-size-root: 16px;
-$body-font-family: 'Lora', sans-serif !default;
-$card-border-radius: 10px;
+$body-font-family: 'Lora', sans-serif;
+$heading-font-family: 'Jost';
+$card-border-radius: 5px;
 $chip-label-border-radius: 0;
 
 // For updating SASS lists
@@ -12,11 +13,29 @@ $ripple-animation-visible-opacity: none;
 
 @import '~vuetify/src/styles/styles.sass';
 
-$material-dark: (
-        'app-bar': #321231,
-        'bottom-navigation': #000000,
-        'background': #000000,
-        'cards': #000000,
-        'navigation-drawer': #000000,
-        'toolbar': #000000
-);
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Jost', sans-serif !important;
+}
+
+// Brand colours
+$faux-alice-blue: #f1f9fa;
+$faux-sw-paint: #bfccd8;
+$faux-roman-silver: #808890;
+$faux-dark-turquoise: #00c8d8;
+$faux-oxford-blue: #002447;
+$black-pearl: #021222;
+$whisper: #e4e4e4;
+
+
+  // App bar
+$app-bar-border-radius: 0;
+$app-bar-elevation: 0;
+$app-bar-scrolled-title-padding-bottom: 0;
+$app-bar-shaped-border-radius: none;
+$app-bar-transition: none;
+
+// Buttons
+$btn-font-weight: 700;
+$btn-transition: none;
+
+

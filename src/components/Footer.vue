@@ -1,130 +1,244 @@
 <template>
-    <v-footer class="footer-with-nav pa-0" color="transparent">
-        <div class="background-layer">
-<!--            <img :src="require('@/assets/shape-6.svg')" class="shape-6"/>-->
-        </div>
+    <v-footer class="footer-with-nav" color="transparent">
+        <v-container>
+            <v-row no-gutters class="sitemap-row" :class="$vuetify.breakpoint.smAndDown ? '' : 'pb-12'">
+                <v-col sm="12" md="4" cols="12" class="tagline-col">
+                    <a @click="$router.push({ name: 'home'})">
+                        <v-img :src="require('@/assets/logo-light.webp')" width="110"
+                               :class="$vuetify.breakpoint.smAndDown ? 'mx-auto' : ''" height="42"/>
+                    </a>
 
-        <div class="foreground-layer">
-            <v-layout fill-height justify-center align-center column class="pa-0">
-                <v-container>
-                    <v-row no-gutters>
-                        <v-col cols="12" md="3" sm="12" class="text-center">
-                            <div class="d-flex justify-center">
-                                <v-img :src="require('@/assets/logo-light.webp')" width="200px" contain/>
-                            </div>
-                        </v-col>
+                    <p class="mt-4 text-justify">
+                        Record TIME is a mobile docketing system, that will replace your tedious paper systems
+                        and allow you to spend less time chasing paper docket approvals.
+                    </p>
 
-                        <v-col cols="12" md="6" sm="12">
-                            <div id="contactus-list">
-                                <div class="contactus-item">
-                                    <v-icon color="primary">{{mdiMapMarker}}</v-icon>
-                                    <p class="body-2">
-                                        Unit 5, 9 Beaconsfield Street Fyshwick ACT 2609
-                                    </p>
-                                </div>
+                    <p :class="$vuetify.breakpoint.smAndDown ? 'text-center' : ''">Support: 0421 955 630</p>
+                </v-col>
 
-                                <div class="contactus-item">
-                                    <v-icon color="primary">{{mdiPhone}}</v-icon>
-                                    <p class="body-2">0421 955 630</p>
-                                </div>
+                <v-col sm="12" md="2" :offset="$vuetify.breakpoint.xsOnly ? 0 : 1" cols="12"
+                       class="sitemap-col hidden-sm-and-down">
+                    <h3>Company</h3>
 
-                                <div class="contactus-item">
-                                    <v-icon color="primary">{{mdiEmail}}</v-icon>
-                                    <p class="body-2">
-                                        contact@recordtime.com.au
-                                    </p>
-                                </div>
-                            </div>
-                        </v-col>
+                    <ul class="mt-6">
+                        <li>About Us</li>
+                        <li>FAQ</li>
+                        <li>Our Blogs</li>
+                    </ul>
+                </v-col>
 
-                        <v-col cols="12" md="3" sm="12" class="text-center">
-<!--                            <h3 class="pb-6 body-1 font-weight-bold">Company</h3>-->
+                <v-col sm="12" md="2" cols="12" class="sitemap-col hidden-sm-and-down">
+                    <h3>Resource</h3>
 
-                            <v-layout fill-height align-center justify-center>
-                                <ul id="sitemap-links" class="pt-0">
-                                    <li v-for="(item, index) in $attrs.items" :key="index"
-                                        @click="$router.push({ name: item.linkTo})" class="body-2">
-                                        {{item.title}}
-                                    </li>
+                    <ul class="mt-6">
+                        <li>FAQs</li>
+                        <li>Contact Us</li>
+                        <li>Terms of Use</li>
+                        <li>License Agreement</li>
+                        <li>How To's</li>
+                    </ul>
+                </v-col>
+
+                <v-col sm="12" md="3" cols="12" class="sitemap-col hidden-sm-and-down">
+                    <h3>Our Address</h3>
+
+                    <p class="mt-6">
+                        ABN: 99 604 582 649 | Unit 5, 9 Beaconsfield Street Fyshwick ACT 2609 Support: 0421 955 630
+                    </p>
+
+                    <div class="mt-10">
+                        <v-hover v-slot:default="{ hover }">
+                            <v-avatar size="40">
+                                <v-icon :color="hover ? '#00c8d8' : '#8298a8'" size="30">{{mdiFacebook}}</v-icon>
+                            </v-avatar>
+                        </v-hover>
+                        <v-hover v-slot:default="{ hover }">
+                            <v-avatar size="40" class="mx-4">
+                                <v-icon :color="hover ? '#00c8d8' : '#8298a8'" size="30">{{mdiGoogle}}</v-icon>
+                            </v-avatar>
+                        </v-hover>
+                        <v-hover v-slot:default="{ hover }">
+                            <v-avatar size="40">
+                                <v-icon :color="hover ? '#00c8d8' : '#8298a8'" size="30">{{mdiTwitter}}</v-icon>
+                            </v-avatar>
+                        </v-hover>
+                    </div>
+                </v-col>
+
+                <!-- Mobile only accordions -->
+                <v-col sm="12" md="3" cols="12" class="sitemap-col hidden-md-and-up">
+                    <v-expansion-panels flat>
+                        <v-expansion-panel>
+                            <v-expansion-panel-header :expand-icon="mdiPlus" class="pl-0">
+                                Company
+                            </v-expansion-panel-header>
+                            <v-expansion-panel-content>
+                                <ul>
+                                    <li>About Us</li>
+                                    <li>FAQ</li>
+                                    <li>Our Blogs</li>
                                 </ul>
-                            </v-layout>
-                        </v-col>
-                    </v-row>
-                </v-container>
+                            </v-expansion-panel-content>
+                        </v-expansion-panel>
 
-                <p class="text-center body-2 font-weight-bold mt-5">
-                    © Copyright 2020 Record Time Pty Ltd. All rights reserved
-                </p>
-            </v-layout>
-        </div>
+                        <v-expansion-panel>
+                            <v-expansion-panel-header :expand-icon="mdiPlus" class="pl-0">
+                                Resource
+                            </v-expansion-panel-header>
+                            <v-expansion-panel-content>
+                                <ul>
+                                    <li>FAQs</li>
+                                    <li>Contact Us</li>
+                                    <li>Terms of Use</li>
+                                    <li>License Agreement</li>
+                                    <li>How To's</li>
+                                </ul>
+                            </v-expansion-panel-content>
+                        </v-expansion-panel>
+
+                        <v-expansion-panel>
+                            <v-expansion-panel-header :expand-icon="mdiPlus" class="pl-0">
+                                Our Address
+                            </v-expansion-panel-header>
+                            <v-expansion-panel-content>
+                                <p>
+                                    ABN: 99 604 582 649 | Unit 5, 9 Beaconsfield Street Fyshwick ACT 2609 Support: 0421 955 630
+                                </p>
+
+                                <div :class="$vuetify.breakpoint.smAndDown ? 'text-center' : 'mt-10'">
+                                    <v-avatar size="40">
+                                        <v-icon color="#8298a8" size="30">{{mdiFacebook}}</v-icon>
+                                    </v-avatar>
+                                    <v-avatar size="40" class="mx-4">
+                                        <v-icon color="#8298a8" size="30">{{mdiGoogle}}</v-icon>
+                                    </v-avatar>
+                                    <v-avatar size="40">
+                                        <v-icon color="#8298a8" size="30">{{mdiTwitter}}</v-icon>
+                                    </v-avatar>
+                                </div>
+                            </v-expansion-panel-content>
+                        </v-expansion-panel>
+                    </v-expansion-panels>
+                </v-col>
+            </v-row>
+
+            <v-row no-gutters class="copyright-row pt-4">
+                <v-col cols="12" sm="12" md="6">
+                    © 2015-2020 Record Time Pty Ltd. All rights reserved.
+                </v-col>
+
+                <v-col cols="12" sm="12" md="6">Privacy Policy</v-col>
+            </v-row>
+        </v-container>
     </v-footer>
 </template>
 
 <style lang="scss">
     .footer-with-nav {
-        position: relative;
+        .sitemap-row {
+            border-bottom: 1px solid $whisper;
 
-        .background-layer {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 5;
+            .tagline-col {
+                > p {
 
-            .shape-6 {
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 100%;
-                width: 100%;
+                    &:nth-of-type(1) {
+                        color: $black-pearl;
+                        line-height: 1.71;
+                        font-size: 14px;
+                    }
+
+                    &:nth-of-type(2) {
+                        font-size: 16px;
+                        font-weight: 600;
+                        line-height: 1.63;
+                        color: $black-pearl;
+                    }
+                }
+            }
+
+            .sitemap-col {
+                h3 {
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: $black-pearl;
+                }
+
+                ul {
+                    list-style: none;
+                    padding: 0;
+
+                    li {
+                        font-size: 14px;
+                        line-height: 2.14;
+                        color: $faux-roman-silver;
+                        text-decoration: underline;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $faux-dark-turquoise;
+                        }
+                    }
+                }
+
+                p {
+                    font-size: 14px;
+                    line-height: 1.71;
+                    color: $faux-roman-silver;
+                }
+
+                .v-expansion-panels {
+                    .v-expansion-panel {
+                        &:nth-of-type(3) {
+                            button.v-expansion-panel-header {
+                                border: none;
+                            }
+                        }
+
+                        button.v-expansion-panel-header {
+                            border-bottom: 1px solid $whisper;
+                            font-size: 16px;
+                            font-weight: 600;
+                            color: $black-pearl;
+                        }
+
+                        .v-expansion-panel-content {
+                            .v-expansion-panel-content__wrap {
+                                padding: 16px 0;
+
+                                ul {
+                                    padding: 0;
+                                    text-align: center;
+                                    li {
+                                        display: inline-flex;
+                                        padding: 0 16px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
 
-        .foreground-layer {
-            position: relative;
-            z-index: 15;
-            width: 100%;
+        .copyright-row {
+            div[class*="col"] {
+                font-size: 14px;
+                font-weight: 500;
+                color: $faux-roman-silver;
 
-            #sitemap-links {
-                list-style-type: none;
-                margin: 0 auto;
-                padding: 20px;
-                overflow: hidden;
-
-                @media screen and (max-width: 600px) {
-                    padding: 0;
-                }
-
-                li {
-                    padding: 0 15px;
-                    float: left;
-                    &:hover {
-                        cursor: pointer;
-                        text-decoration: underline;
-                        color: #F50E02;
-                    }
+                &:nth-of-type(2) {
+                    text-align: right;
                 }
             }
 
-            #contactus-list {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 100%;
-                .contactus-item {
-                    width: 350px;
-                    padding-bottom: 20px;
-                    display: flex;
-                    i {
-                        align-self: center;
-                    }
+            @media only screen and (max-width: 768px) {
+                div[class*="col"] {
+                    font-size: 12px;
+                    text-align: center;
 
-                    p {
-                        padding: 0;
-                        margin: 0 0 0 20px;
-                        text-align: left;
-                        text-justify: auto;
+                    &:nth-of-type(2) {
+                        padding-top: 16px;
+                        text-align: center;
                     }
                 }
             }
@@ -134,16 +248,19 @@
 
 <script>
   // @ is an alias to /src
-  import { mdiMapMarker } from '@mdi/js'
-  import { mdiPhone } from '@mdi/js';
-  import { mdiEmail } from '@mdi/js';
+  import { mdiFacebook } from '@mdi/js';
+  import { mdiGoogle } from '@mdi/js';
+  import { mdiTwitter } from '@mdi/js';
+  import { mdiPlus } from '@mdi/js';
+
 
   export default {
     data() {
       return {
-        mdiMapMarker: mdiMapMarker,
-        mdiPhone: mdiPhone,
-        mdiEmail: mdiEmail
+          mdiFacebook: mdiFacebook,
+          mdiGoogle: mdiGoogle,
+          mdiTwitter: mdiTwitter,
+          mdiPlus: mdiPlus
       }
     }
   }
