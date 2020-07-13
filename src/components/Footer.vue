@@ -1,6 +1,30 @@
 <template>
     <v-footer class="footer-with-nav" color="transparent">
         <v-container>
+            <v-layout justify-start column align-center fill-height class="app-store-banner">
+
+                <p class="text-uppercase">check our mobile app interaction</p>
+                <h2>Download Record Time App Now</h2>
+
+                <div class="store-logo-container">
+                    <div class="google">
+                        <img src="../assets/apple_logo.webp" alt="Apple Store Logo">
+                        <div class="text-wrapper">
+                            <p>Download on the</p>
+                            <p>App Store</p>
+                        </div>
+                    </div>
+
+                    <div class="apple">
+                        <img src="../assets/google_play_logo.webp" alt="Google Play Store Logo">
+                        <div class="text-wrapper">
+                            <p>Get it on</p>
+                            <p>App Store</p>
+                        </div>
+                    </div>
+                </div>
+            </v-layout>
+
             <v-row no-gutters class="sitemap-row" :class="$vuetify.breakpoint.smAndDown ? '' : 'pb-12'">
                 <v-col sm="12" md="4" cols="12" class="tagline-col">
                     <a @click="$router.push({ name: 'home'})">
@@ -135,6 +159,120 @@
 
 <style lang="scss">
     .footer-with-nav {
+        .app-store-banner {
+            @media only screen and (max-width: 600px) {
+                height: 570px;
+                padding: 30px 0;
+                position: relative;
+                width: 100vw;
+                left: -28px;
+            }
+
+            height: 480px;
+            padding: 42px 0;
+            margin-bottom: 65px;
+            background-color: $black-pearl;
+
+            > p {
+                color: $faux-alice-blue;
+                opacity: 0.4;
+                font-size: 16px;
+                letter-spacing: 4px;
+                margin-bottom: 10px;
+                text-align: center;
+
+                @media only screen and (max-width: 600px) {
+                    font-size: 12px;
+                    letter-spacing: 3px;
+                }
+            }
+
+            h2 {
+                font-size: 32px;
+                font-weight: bold;
+                color: $faux-alice-blue;
+                padding-bottom: 34px;
+
+                @media only screen and (max-width: 600px) {
+                    font-size: 26px;
+                    width: 70%;
+                    text-align: center;
+                }
+            }
+
+            .store-logo-container {
+                display: flex;
+
+                @media only screen and (max-width: 600px) {
+                    flex-direction: column;
+                }
+
+                .google {
+                    display: flex;
+                    border: solid 1.3px $faux-alice-blue;
+                    padding: 11px 15px 9px 15px;
+                    border-radius: 7px;
+                    margin-right: 16px;
+
+                    @media only screen and (max-width: 600px) {
+                        margin-right: 0;
+                        margin-bottom: 30px;
+                    }
+
+                    @media only screen and (min-width: 600px) and (max-width: 768px) {
+                        margin-bottom: 0;
+                    }
+
+                    img {
+                        width: 27px;
+                        height: 34px;
+                    }
+                    div.text-wrapper {
+                        padding-left: 10px;
+                        padding-top: 2px;
+                        p {
+                            color: #ffffff;
+                            margin: 0;
+                            &:nth-of-type(1) {
+                                font-size: 8px;
+                            }
+                            &:nth-of-type(2) {
+                                font-size: 20px;
+                                line-height: 0.9;
+                            }
+                        }
+                    }
+                }
+
+                .apple {
+                    display: flex;
+                    border: solid 1.3px $faux-alice-blue;
+                    padding: 11px 15px 9px 15px;
+                    border-radius: 7px;
+                    img {
+                        width: 30px;
+                        height: 34px;
+                    }
+                    div.text-wrapper {
+                        padding-left: 10px;
+                        padding-top: 2px;
+                        p {
+                            color: #ffffff;
+                            margin: 0;
+                            &:nth-of-type(1) {
+                                font-size: 8px;
+                                text-transform: uppercase;
+                            }
+                            &:nth-of-type(2) {
+                                font-size: 22px;
+                                line-height: 0.9;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         .sitemap-row {
             border-bottom: 1px solid $whisper;
 

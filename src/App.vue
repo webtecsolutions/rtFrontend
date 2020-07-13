@@ -5,7 +5,7 @@
       <nav-drawer :items="navItems" v-if="showDrawer" @showDrawer="transitionend" />
 
       <!-- App bar -->
-      <v-app-bar app color="#FFFFFF" tile height="70px" class="pt-4" fixed>
+      <v-app-bar app color="#FFFFFF" tile height="70px" fixed>
         <v-container class="d-flex align-center">
           <v-app-bar-nav-icon @click="showDrawer = true" v-if="$vuetify.breakpoint.mdAndDown">
             <slot>
@@ -13,10 +13,10 @@
             </slot>
           </v-app-bar-nav-icon>
           <a @click="$router.push({ name: 'home'})">
-            <v-img :src="require('@/assets/logo-light.webp')" :width="$vuetify.breakpoint.smAndDown ? 100 : 200"/>
+            <v-img :src="require('@/assets/logo-light.webp')" :width="$vuetify.breakpoint.mdAndDown ? 100 : 160"/>
           </a>
 
-          <div class="hidden-sm-and-down ml-md-14">
+          <div class="hidden-md-and-down ml-md-14">
             <a v-for="(item, index) in navItems" :key="index" class="nav-link pr-md-8"
                v-if="item.isMainNavItem" @click="$router.push({ name: item.linkTo, params: { id: item.linkParams }})">
               {{item.title}}
@@ -60,6 +60,14 @@
 
     header.v-app-bar {
       z-index: 40;
+      padding-top: 16px;
+
+      @media only screen and (max-width: 1264px) {
+        padding-top: 0;
+        div.v-toolbar__content {
+          padding: 0;
+        }
+      }
     }
 
     .v-navigation-drawer {
