@@ -1,13 +1,16 @@
 <template>
-    <v-footer class="footer-with-nav" color="transparent">
+    <v-footer class="footer-with-nav mt-16" color="transparent">
         <v-container>
             <v-layout justify-start column align-center fill-height class="app-store-banner">
+                <img src="../assets/shape-1.svg" class="shape-1">
+                <img src="../assets/shape-2.svg" class="shape-2">
+                <img src="../assets/shape-3.svg" class="shape-3">
 
                 <p class="text-uppercase">check our mobile app interaction</p>
                 <h2>Download Record Time App Now</h2>
 
                 <div class="store-logo-container">
-                    <div class="google">
+                    <div class="google" @click="goToGoogleAppStore">
                         <img src="../assets/apple_logo.webp" alt="Apple Store Logo">
                         <div class="text-wrapper">
                             <p>Download on the</p>
@@ -15,11 +18,27 @@
                         </div>
                     </div>
 
-                    <div class="apple">
+                    <div class="apple" @click="goToAppleAppStore">
                         <img src="../assets/google_play_logo.webp" alt="Google Play Store Logo">
                         <div class="text-wrapper">
                             <p>Get it on</p>
                             <p>App Store</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="devices-container">
+                    <img src="../assets/how-it-works.png" alt="Record time docketing system">
+
+                    <div class="btn-container">
+                        <p>How it works?</p>
+
+                        <div class="play-btn-container">
+                            <img src="../assets/btn-blur.svg" alt="Background blur">
+
+                            <v-btn fab color="accent">
+                                <v-icon dark>{{mdiPlay}}</v-icon>
+                            </v-btn>
                         </div>
                     </div>
                 </div>
@@ -172,6 +191,32 @@
             padding: 42px 0;
             margin-bottom: 65px;
             background-color: $black-pearl;
+            position: relative;
+            overflow: hidden;
+
+            > img.shape-1 {
+                position: absolute;
+                transform: translateY(-45%);
+                left: 0;
+            }
+
+            > img.shape-2 {
+                position: absolute;
+                transform: translateX(-20%) translateY(20%);
+                bottom: 0;
+                left: 0;
+            }
+
+            > img.shape-3 {
+                position: absolute;
+                transform: translateX(20%) translateY(10%);
+                bottom: 0;
+                right: 0;
+
+                @media only screen and (max-width: 768px) {
+                    display: none;
+                }
+            }
 
             > p {
                 color: $faux-alice-blue;
@@ -213,6 +258,11 @@
                     padding: 11px 15px 9px 15px;
                     border-radius: 7px;
                     margin-right: 16px;
+                    cursor: pointer;
+
+                    &:hover, &:focus {
+                        border: solid 1.3px $faux-dark-turquoise;
+                    }
 
                     @media only screen and (max-width: 600px) {
                         margin-right: 0;
@@ -249,6 +299,12 @@
                     border: solid 1.3px $faux-alice-blue;
                     padding: 11px 15px 9px 15px;
                     border-radius: 7px;
+                    cursor: pointer;
+
+                    &:hover, &:focus {
+                        border: solid 1.3px $faux-dark-turquoise;
+                    }
+
                     img {
                         width: 30px;
                         height: 34px;
@@ -267,6 +323,72 @@
                                 font-size: 22px;
                                 line-height: 0.9;
                             }
+                        }
+                    }
+                }
+            }
+
+            .devices-container {
+                width: 60%;
+                height: 90%;
+                position: relative;
+
+                @media only screen and (max-width: 600px) {
+                    width: 100%;
+                }
+
+                @media only screen and (min-width: 1904px) {
+                    width: 50%;
+                    height: 100%;
+                }
+
+                & > img {
+                    height: 100%;
+                    width: 100%;
+                    background-position: top;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    position: relative;
+                    left: -30px;
+                }
+
+                .btn-container {
+                    position: absolute;
+                    top: 130px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    @media only screen and (max-width: 768px) {
+                        top: 80px;
+                    }
+
+                    p {
+                        font-size: 18px;
+                        line-height: 1.44;
+                        text-align: center;
+                        color: $black-pearl;
+                        position: relative;
+                        z-index: 1;
+                    }
+
+                    .play-btn-container {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        transform: translateY(-40%);
+
+                        img {
+                            position: relative;
+                        }
+
+                        button.v-btn {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translateX(-50%) translateY(-50%);
                         }
                     }
                 }
@@ -390,6 +512,7 @@
   import { mdiGoogle } from '@mdi/js';
   import { mdiTwitter } from '@mdi/js';
   import { mdiPlus } from '@mdi/js';
+  import { mdiPlay } from '@mdi/js';
 
 
   export default {
@@ -398,8 +521,17 @@
           mdiFacebook: mdiFacebook,
           mdiGoogle: mdiGoogle,
           mdiTwitter: mdiTwitter,
-          mdiPlus: mdiPlus
+          mdiPlus: mdiPlus,
+          mdiPlay: mdiPlay
       }
-    }
+    },
+      methods: {
+          goToGoogleAppStore() {
+              window.open('','_blank');
+          },
+          goToAppleAppStore() {
+              window.open('','_blank');
+          }
+      }
   }
 </script>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="434px" height="443px" viewBox="0 0 434 443" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>Path 33</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#6DABB6" offset="0%"></stop>
+            <stop stop-color="#021222" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="FINAL-DESIGN" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.100000001">
+        <path d="M-74.9626084,96 L350.966547,96 C373.057937,96 390.966547,113.90861 390.966547,136 C390.966547,144.461122 388.283518,152.704318 383.303211,159.544429 L170.338633,452.036719 C157.335404,469.895765 132.316586,473.832183 114.45754,460.828954 C111.086412,458.374425 108.119834,455.407846 105.665305,452.036719 L-107.299273,159.544429 C-120.302502,141.685383 -116.366084,116.666565 -98.5070377,103.663336 C-91.6669264,98.6830287 -83.4237303,96 -74.9626084,96 Z" id="Path-33-Copy-2" fill="url(#linearGradient-1)" transform="translate(138.000000, 276.500000) rotate(34.000000) translate(-138.000000, -276.500000) "></path>
+    </g>
+</svg>
