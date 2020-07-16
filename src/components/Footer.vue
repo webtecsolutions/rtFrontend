@@ -2,16 +2,16 @@
     <v-footer class="footer-with-nav mt-16" color="transparent">
         <v-container>
             <v-layout justify-start column align-center fill-height class="app-store-banner">
-                <img src="../assets/shape-1.svg" class="shape-1">
-                <img src="../assets/shape-2.svg" class="shape-2">
-                <img src="../assets/shape-3.svg" class="shape-3">
+                <img src="../assets/Footer/shape-1.svg" class="shape-1">
+                <img src="../assets/Footer/shape-2.svg" class="shape-2">
+                <img src="../assets/Footer/shape-3.svg" class="shape-3">
 
                 <p class="text-uppercase">check our mobile app interaction</p>
                 <h2>Download Record Time App Now</h2>
 
                 <div class="store-logo-container">
                     <div class="google" @click="goToGoogleAppStore">
-                        <img src="../assets/apple_logo.webp" alt="Apple Store Logo">
+                        <img src="../assets/Footer/apple_logo.webp" alt="Apple Store Logo">
                         <div class="text-wrapper">
                             <p>Download on the</p>
                             <p>App Store</p>
@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="apple" @click="goToAppleAppStore">
-                        <img src="../assets/google_play_logo.webp" alt="Google Play Store Logo">
+                        <img src="../assets/Footer/google_play_logo.webp" alt="Google Play Store Logo">
                         <div class="text-wrapper">
                             <p>Get it on</p>
                             <p>App Store</p>
@@ -28,13 +28,13 @@
                 </div>
 
                 <div class="devices-container">
-                    <img src="../assets/how-it-works.png" alt="Record time docketing system">
+                    <img src="../assets/Footer/how-it-works.webp" alt="Record time docketing system">
 
                     <div class="btn-container">
                         <p>How it works?</p>
 
                         <div class="play-btn-container">
-                            <img src="../assets/btn-blur.svg" alt="Background blur">
+                            <img src="../assets/Footer/btn-blur.svg" alt="Background blur">
 
                             <v-btn fab color="accent">
                                 <v-icon dark>{{mdiPlay}}</v-icon>

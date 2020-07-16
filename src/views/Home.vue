@@ -1,5 +1,6 @@
 <template>
     <div>
+        <landing-banner/>
     </div>
 </template>
 
@@ -8,6 +9,7 @@
 
 <script>
     // @ is an alias to /src
+    import LandingBanner from '@/components/LandingBanner.vue';
 
     export default {
         metaInfo: {
@@ -17,6 +19,9 @@
                 { name: 'name', content: '' },
                 { name: 'description', content: '' }
             ]
+        },
+        components: {
+            LandingBanner
         },
         data() {
             return {
