@@ -49,6 +49,26 @@
                 </div>
             </v-container>
         </div>
+
+        <div class="demo-section">
+            <v-container>
+                <div class="iphone-container">
+                    <img src="../assets/Home/iphone.png" alt="Get record time demo"/>
+                </div>
+
+                <div class="text-section">
+                    <h2>Get a Demo and Try Record Time Today!</h2>
+                    <p>Try RECORD TIME for free for a month and start saving money!</p>
+
+                    <div class="email-input-container">
+                        <v-text-field filled background-color="white" clearable flat full-width height="55" solo/>
+                        <v-btn height="56" class="get-demo-btn" tile color="primary">
+                            Get Demo Now
+                        </v-btn>
+                    </div>
+                </div>
+            </v-container>
+        </div>
     </div>
 </template>
 
@@ -187,6 +207,134 @@
                 }
             }
 
+        }
+    }
+
+    .demo-section {
+        height: 340px;
+        background-color: $faux-oxford-blue;
+
+        @media only screen and (max-width: 600px) {
+            height: unset;
+        }
+
+        .container {
+            height: 100%;
+            padding-top: 66px;
+            padding-bottom: 66px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+
+            @media only screen and (max-width: 600px) {
+                flex-direction: column-reverse;
+                padding-top: 34px;
+                padding-bottom: 0;
+            }
+
+            @media only screen and (min-width: 600px) and (max-width: 960px) {
+                padding-top: 45px;
+                padding-bottom: 45px;
+            }
+
+            .iphone-container {
+                position: relative;
+                @media only screen and (max-width: 600px) {
+                    text-align: center;
+                    margin-left: 30px;
+                }
+
+                img {
+                    position: relative;
+                    height: 460px;
+                    transform: translateY(-110px);
+
+                    @media only screen and (max-width: 600px) {
+                        height: 410px;
+                        transform: unset;
+                    }
+                }
+            }
+
+            .text-section {
+                width: fit-content;
+
+                @media only screen and (max-width: 600px) {
+                    padding-left: 34px;
+                    padding-right: 34px;
+                }
+
+                h2 {
+                    font-size: 32px;
+                    font-weight: bold;
+                    color: #ffffff;
+                    padding-bottom: 16px;
+                    max-width: 366px;
+
+                    @media only screen and (max-width: 600px) {
+                        text-align: center;
+                        max-width: unset;
+                        font-size: 26px;
+                    }
+                }
+                p {
+                    margin: 0;
+                    padding: 0;
+                    padding-bottom: 28px;
+                    font-size: 16px;
+                    line-height: 1.63;
+                    opacity: 0.6;
+                    color: #ffffff;
+
+                    @media only screen and (max-width: 600px) {
+                        text-align: center;
+                        font-size: 14px;
+                        line-height: 1.57;
+                    }
+                }
+                .email-input-container {
+                    width: 555px;
+                    display: flex;
+
+                    @media only screen and (max-width: 600px) {
+                        width: unset;
+                        flex-direction: column;
+
+                        & > .v-input {
+                            width: 100% !important;
+                        }
+
+                        .get-demo-btn {
+                            border: 4px solid crimson;
+                            width: 100%;
+                        }
+                    }
+
+                    @media only screen and (min-width: 600px) and (max-width: 960px) {
+                        width: 400px;
+                    }
+
+                    & > .v-input {
+                        width: 60%;
+                    }
+
+                    .get-demo-btn {
+                        width: 40%;
+                        border-top-right-radius: 4px;
+                        border-bottom-right-radius: 4px;
+
+                        @media only screen and (max-width: 600px) {
+                            width: unset;
+                        }
+
+                        span.v-btn__content {
+                            font-size: 16px;
+                            font-weight: bold;
+                            letter-spacing: 1px;
+                        }
+                    }
+                }
+            }
         }
     }
 </style>
