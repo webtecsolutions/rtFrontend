@@ -60,7 +60,6 @@
 
     header.v-app-bar {
       z-index: 40;
-      padding-top: 16px;
 
       @media only screen and (max-width: 1264px) {
         padding-top: 0;
