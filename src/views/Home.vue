@@ -1,8 +1,25 @@
 <template>
     <div>
-        <landing-banner/>
+        <landing-banner bg-image="Home/banner.png">
+            <template v-slot:title>
+                Easy <span>document solution</span> in your smartphone
+            </template>
 
-        <div class="features-section">
+            <template v-slot:subTitle>
+                Record TIME will replace your tedious paper systems and allow you to spend less time chasing paper docket approvals.
+            </template>
+
+            <template v-slot:main>
+                <secondary-btn-row/>
+
+                <div class="client-logo-container">
+                    <img v-for="(path, index) in clientLogoPaths" :src="require('../assets/' + path)"
+                         :key="index" :alt="'Client logo ' + index">
+                </div>
+            </template>
+        </landing-banner>
+
+        <div class="features-home-section">
             <v-container class="features-container">
                 <p>Complete Docketing Solution</p>
 
@@ -106,7 +123,45 @@
 </template>
 
 <style lang="scss">
-    .features-section {
+    .client-logo-container {
+        @media only screen and (max-width: 600px) {
+            display: flex;
+            flex-flow: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            img {
+                margin-right: 10px;
+                margin-bottom: 24px;
+            }
+        }
+
+        @media only screen and (min-width: 600px) and (max-width: 1264px) {
+            text-align: center;
+            img {
+                margin-right: 20px;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media only screen and (min-width: 1264px) {
+            margin-bottom: 30px;
+            img {
+                margin-right: 30px;
+            }
+        }
+
+        img {
+            width: 90px;
+            height: 30px;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .features-home-section {
         background-color: $alice-grey;
         margin-top: 110px;
 
@@ -521,6 +576,7 @@
 <script>
     // @ is an alias to /src
     import LandingBanner from '@/components/LandingBanner.vue';
+    import SecondaryBtnRow from '@/components/SecondaryBtnRow1.vue';
     import { mdiArrowLeft } from '@mdi/js';
     import { mdiArrowRight } from '@mdi/js';
 
@@ -534,7 +590,7 @@
             ]
         },
         components: {
-            LandingBanner
+            LandingBanner, SecondaryBtnRow
         },
         data() {
             return {
@@ -596,6 +652,13 @@
                         jobTitle: "CEO at Fortify Geotech",
                         name: "Dean Robinson"
                     }
+                ],
+                clientLogoPaths: [
+                    'logo-light.webp',
+                    'logo-light.webp',
+                    'logo-light.webp',
+                    'logo-light.webp',
+                    'logo-light.webp'
                 ]
             }
         },

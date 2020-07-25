@@ -2,22 +2,17 @@
     <v-container class="landing-banner-container">
         <v-layout fill-height>
             <v-flex class="text-section" sm9 md7>
-                <h1>Easy <span>document solution</span> in your smartphone</h1>
-
+                <h1>
+                    <slot name="title"/>
+                </h1>
                 <p>
-                    Record TIME will replace your tedious paper systems
-                    and allow you to spend less time chasing paper docket approvals.
+                    <slot name="subTitle"/>
                 </p>
 
-                <secondary-btn-row1/>
-
-                <div class="client-logo-container">
-                    <img v-for="(path, index) in clientLogoPaths" :src="require('../assets/' + path)"
-                         :key="index" :alt="'Client logo ' + index">
-                </div>
+                <slot name="main"/>
             </v-flex>
         </v-layout>
-        <img src="../assets/Home/banner.png" alt="How it works">
+        <img :src="require('../assets/' + bgImage)" alt="How it works">
     </v-container>
 </template>
 
@@ -104,44 +99,6 @@
                         padding-bottom: 40px;
                     }
                 }
-
-                .client-logo-container {
-                    @media only screen and (max-width: 600px) {
-                        display: flex;
-                        flex-flow: wrap;
-                        justify-content: center;
-                        align-items: center;
-                        margin-bottom: 10px;
-                        img {
-                            margin-right: 10px;
-                            margin-bottom: 24px;
-                        }
-                    }
-
-                    @media only screen and (min-width: 600px) and (max-width: 1264px) {
-                        text-align: center;
-                        img {
-                            margin-right: 20px;
-                            margin-bottom: 20px;
-                        }
-                    }
-
-                    @media only screen and (min-width: 1264px) {
-                        margin-bottom: 30px;
-                        img {
-                            margin-right: 30px;
-                        }
-                    }
-
-                    img {
-                        width: 90px;
-                        height: 30px;
-
-                        &:last-of-type {
-                            margin-right: 0;
-                        }
-                    }
-                }
             }
         }
     }
@@ -149,7 +106,6 @@
 
 <script>
     // @ is an alias to /src
-    import SecondaryBtnRow1 from '@/components/SecondaryBtnRow1.vue';
 
     export default {
         metaInfo: {
@@ -160,18 +116,14 @@
                 { name: 'description', content: '' }
             ]
         },
-        components: {
-            SecondaryBtnRow1
+        props: {
+            bgImage: {
+                type: String,
+                default: ""
+            }
         },
         data() {
             return {
-                clientLogoPaths: [
-                    'logo-light.webp',
-                    'logo-light.webp',
-                    'logo-light.webp',
-                    'logo-light.webp',
-                    'logo-light.webp'
-                ]
             }
         }
     }
