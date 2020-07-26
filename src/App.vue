@@ -123,7 +123,7 @@
           { title: "Features", isMainNavItem: true, linkTo: 'features'},
           { title: "Pricing", isMainNavItem: true, linkTo: 'pricing'},
           { title: "FAQs", isMainNavItem: true, linkTo: 'faq'},
-          { title: "Support", isMainNavItem: true, linkTo: ''}
+          { title: "Contact", isMainNavItem: true, linkTo: 'contact'}
         ]
       }
     },
