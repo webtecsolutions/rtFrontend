@@ -327,8 +327,6 @@
     // @ is an alias to /src
     import LandingBanner from '@/components/LandingBanner.vue';
     import SecondaryBtnRow from '@/components/SecondaryBtnRow1.vue';
-    import { mdiArrowLeft } from '@mdi/js';
-    import { mdiArrowRight } from '@mdi/js';
     import { mdiCheck } from '@mdi/js';
 
     export default {
@@ -346,65 +344,7 @@
         data() {
             return {
                 testimonialWindow: 0,
-                mdiArrowLeft: mdiArrowLeft,
-                mdiArrowRight: mdiArrowRight,
                 mdiCheck: mdiCheck,
-                testimonials: [
-                    {
-                        content: "Now that safety on work sites (particularly in construction), is such a big issue for employers to" +
-                            "be aware of, my employees can also customize the dockets to become a Job Safety Assessment (JSA)," +
-                            " that can be filled out before working on site. This covers both employers and employees in case of" +
-                            " a safety breach, and again, it is all accessible on the back end. The JSA can be sent to both the supervisor and the client.",
-                        image: "1.jpg",
-                        jobTitle: "CEO at Fortify Geotech",
-                        name: "Dean Robinson"
-                    },
-                    {
-                        content: "Now that safety on work sites (particularly in construction), is such a big issue for employers to" +
-                            "be aware of, my employees can also customize the dockets to become a Job Safety Assessment (JSA)," +
-                            " that can be filled out before working on site. This covers both employers and employees in case of" +
-                            " a safety breach, and again, it is all accessible on the back end. The JSA can be sent to both the supervisor and the client.",
-                        image: "1.jpg",
-                        jobTitle: "CEO at Fortify Geotech",
-                        name: "Dean Robinson"
-                    },
-                    {
-                        content: "Now that safety on work sites (particularly in construction), is such a big issue for employers to" +
-                            "be aware of, my employees can also customize the dockets to become a Job Safety Assessment (JSA)," +
-                            " that can be filled out before working on site. This covers both employers and employees in case of" +
-                            " a safety breach, and again, it is all accessible on the back end. The JSA can be sent to both the supervisor and the client.",
-                        image: "1.jpg",
-                        jobTitle: "CEO at Fortify Geotech",
-                        name: "Dean Robinson"
-                    },
-                    {
-                        content: "Now that safety on work sites (particularly in construction), is such a big issue for employers to" +
-                            "be aware of, my employees can also customize the dockets to become a Job Safety Assessment (JSA)," +
-                            " that can be filled out before working on site. This covers both employers and employees in case of" +
-                            " a safety breach, and again, it is all accessible on the back end. The JSA can be sent to both the supervisor and the client.",
-                        image: "1.jpg",
-                        jobTitle: "CEO at Fortify Geotech",
-                        name: "Dean Robinson"
-                    },
-                    {
-                        content: "Now that safety on work sites (particularly in construction), is such a big issue for employers to" +
-                            "be aware of, my employees can also customize the dockets to become a Job Safety Assessment (JSA)," +
-                            " that can be filled out before working on site. This covers both employers and employees in case of" +
-                            " a safety breach, and again, it is all accessible on the back end. The JSA can be sent to both the supervisor and the client.",
-                        image: "1.jpg",
-                        jobTitle: "CEO at Fortify Geotech",
-                        name: "Dean Robinson"
-                    },
-                    {
-                        content: "Now that safety on work sites (particularly in construction), is such a big issue for employers to" +
-                            "be aware of, my employees can also customize the dockets to become a Job Safety Assessment (JSA)," +
-                            " that can be filled out before working on site. This covers both employers and employees in case of" +
-                            " a safety breach, and again, it is all accessible on the back end. The JSA can be sent to both the supervisor and the client.",
-                        image: "1.jpg",
-                        jobTitle: "CEO at Fortify Geotech",
-                        name: "Dean Robinson"
-                    }
-                ],
                 clientLogoPaths: [
                     '1.png',
                     '1.png',

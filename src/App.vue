@@ -18,6 +18,7 @@
 
           <div class="hidden-md-and-down ml-md-14">
             <a v-for="(item, index) in navItems" :key="index" class="nav-link pr-md-8"
+               :class="item.linkTo === $route.name ? 'route-active': ''"
                v-if="item.isMainNavItem" @click="$router.push({ name: item.linkTo, params: { id: item.linkParams }})">
               {{item.title}}
             </a>
@@ -78,6 +79,12 @@
       color: $black-pearl;
       opacity: 0.4;
 
+      &.route-active {
+        font-weight: bold;
+        opacity: unset;
+        color: $faux-dark-turquoise;
+      }
+
       &:hover {
         opacity: 1;
       }
@@ -113,10 +120,10 @@
         navItems: [
           { title: "Home", isMainNavItem: true, linkTo: 'home'},
           { title: "About Us", isMainNavItem: true, linkTo: 'about'},
-          { title: "Features", isMainNavItem: true, linkTo: 'about'},
-          { title: "Pricing", isMainNavItem: true, linkTo: 'about'},
-          { title: "FAQs", isMainNavItem: true, linkTo: 'about'},
-          { title: "Support", isMainNavItem: true, linkTo: 'about'}
+          { title: "Features", isMainNavItem: true, linkTo: 'features'},
+          { title: "Pricing", isMainNavItem: true, linkTo: ''},
+          { title: "FAQs", isMainNavItem: true, linkTo: ''},
+          { title: "Support", isMainNavItem: true, linkTo: ''}
         ]
       }
     },
