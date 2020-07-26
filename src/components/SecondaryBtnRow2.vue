@@ -2,12 +2,12 @@
     <div class="secondary-btn-row2">
         <v-btn height="55" :width="$vuetify.breakpoint.xsOnly ? '' : '275'"
                @click="btnClicked1" class="btn-1" elevation="0">
-            Less then 5 members
+            {{text1}}
         </v-btn>
 
         <v-btn color="secondary" height="55" :width="$vuetify.breakpoint.xsOnly ? '' : '275'"
                class="btn-2 ml-n1" @click="btnClicked2" elevation="0">
-            More members
+            {{text2}}
         </v-btn>
     </div>
 </template>
@@ -60,9 +60,13 @@
 
     export default {
         props: {
-            text: {
+            text1: {
                 type: String,
-                default: "Get started"
+                default: ""
+            },
+            text2: {
+                type: String,
+                default: ""
             }
         },
         data() {

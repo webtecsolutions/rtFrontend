@@ -122,7 +122,7 @@
           { title: "About Us", isMainNavItem: true, linkTo: 'about'},
           { title: "Features", isMainNavItem: true, linkTo: 'features'},
           { title: "Pricing", isMainNavItem: true, linkTo: 'pricing'},
-          { title: "FAQs", isMainNavItem: true, linkTo: ''},
+          { title: "FAQs", isMainNavItem: true, linkTo: 'faq'},
           { title: "Support", isMainNavItem: true, linkTo: ''}
         ]
       }

@@ -11,7 +11,7 @@
             </template>
 
             <template v-slot:main>
-                <secondary-btn-row/>
+                <secondary-btn-row text1="Less then 5 members" text2="More members"/>
             </template>
         </landing-banner>
 
@@ -21,9 +21,9 @@
                 <h3>{{pricingCard.users}} Users Plan</h3>
                 <div class="post-title-border"/>
                 <div class="price-tile">
-                            <span>
-                                <sup>$</sup>{{pricingCard.price}}<sub>/month</sub>
-                            </span>
+                    <span>
+                        <sup>$</sup>{{pricingCard.price}}<sub>/month</sub>
+                    </span>
                 </div>
                 <div class="employee-info">
                     Suitable for small businesses with up to {{pricingCard.employeeCount}} employees
