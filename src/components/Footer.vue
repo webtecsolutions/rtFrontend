@@ -1,5 +1,5 @@
 <template>
-    <v-footer class="footer-with-nav mt-16" color="transparent">
+    <v-footer class="footer-with-nav" color="transparent">
         <v-container>
             <v-layout justify-start column align-center fill-height class="app-store-banner">
                 <img src="../assets/Footer/shape-1.svg" class="shape-1">
@@ -178,6 +178,12 @@
 
 <style lang="scss">
     .footer-with-nav {
+        margin-top: 80px;
+
+        @media only screen and (max-width: 600px) {
+            margin-top: 40px;
+        }
+
         .app-store-banner {
             @media only screen and (max-width: 600px) {
                 height: 570px;

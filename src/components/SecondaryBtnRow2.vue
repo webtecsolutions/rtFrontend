@@ -1,22 +1,19 @@
 <template>
-    <div class="secondary-btn-row1">
-        <v-btn color="secondary" height="55" :width="$vuetify.breakpoint.xsOnly ? '' : '236'"
-               @click="btnClicked1" class="mr-7 btn-1" elevation="0">
-            Start my free trial
+    <div class="secondary-btn-row2">
+        <v-btn height="55" :width="$vuetify.breakpoint.xsOnly ? '' : '275'"
+               @click="btnClicked1" class="btn-1" elevation="0">
+            Less then 5 members
         </v-btn>
 
-        <v-btn color="white" height="55" :width="$vuetify.breakpoint.xsOnly ? '' : '236'"
-               class="btn-2" text @click="btnClicked2">
-            <div class="icon-shadow">
-                <v-icon color="primary" size="20">{{mdiPlay}}</v-icon>
-            </div>
-            How Record TIME Works?
+        <v-btn color="secondary" height="55" :width="$vuetify.breakpoint.xsOnly ? '' : '275'"
+               class="btn-2 ml-n1" @click="btnClicked2" elevation="0">
+            More members
         </v-btn>
     </div>
 </template>
 
 <style lang="scss">
-    .secondary-btn-row1 {
+    .secondary-btn-row2 {
         margin-bottom: 80px;
 
         @media only screen and (max-width: 600px) {
@@ -28,6 +25,7 @@
         }
 
         button.btn-1 {
+            background-color: rgba(2, 18, 34, 0.1) !important;
             @media only screen and (max-width: 600px) {
                 width: 100%;
                 margin-bottom: 20px;
@@ -41,32 +39,17 @@
         }
 
         button.btn-2 {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
             @media only screen and (max-width: 600px) {
                 width: 100%;
             }
+
             & span.v-btn__content {
                 font-size: 16px;
+                font-weight: bold;
                 line-height: 1.5;
-                letter-spacing: normal;
-                color: $faux-dark-turquoise;
-                text-transform: none;
-
-                .icon-shadow {
-                    border-radius: 50%;
-                    height: 20px;
-                    width: 20px;
-                    position: relative;
-                    overflow: hidden;
-                    margin-right: 5px;
-                    span {
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translateX(-50%) translateY(-50%);
-                        z-index: 10;
-                        box-shadow: inset 20px 20px 0 20px rgba(0,200,216,0.3);
-                    }
-                }
+                letter-spacing: 1px;
             }
         }
     }
