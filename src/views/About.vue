@@ -283,6 +283,10 @@
         flex-direction: column;
         justify-content: center;
 
+        @media only screen and (max-width: 600px) {
+          max-width: unset;
+        }
+
         * {
           margin: 0;
           padding: 0;
