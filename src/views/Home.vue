@@ -1,23 +1,27 @@
 <template>
     <div>
-<!--        <landing-banner :bg-image="Home">-->
-<!--            <template v-slot:title>-->
-<!--                Easy <span>document solution</span> in your smartphone-->
-<!--            </template>-->
+        <landing-banner>
+            <template v-slot:title>
+                Easy <span>document solution</span> in your smartphone
+            </template>
 
-<!--            <template v-slot:subTitle>-->
-<!--                Record TIME will replace your tedious paper systems and allow you to spend less time chasing paper docket approvals.-->
-<!--            </template>-->
+            <template v-slot:subTitle>
+                Record TIME will replace your tedious paper systems and allow you to spend less time chasing paper docket approvals.
+            </template>
 
-<!--            <template v-slot:main>-->
-<!--                <secondary-btn-row/>-->
+            <template v-slot:image>
+              <img :src="require('../assets/Home/banner.png')" alt="Home banner image">
+            </template>
 
-<!--                <div class="client-logo-container">-->
-<!--                    <img v-for="(path, index) in clientLogoPaths" :src="require('../assets/' + path)"-->
-<!--                         :key="index" :alt="'Client logo ' + index">-->
-<!--                </div>-->
-<!--            </template>-->
-<!--        </landing-banner>-->
+            <template v-slot:main>
+                <secondary-btn-row/>
+
+                <div class="client-logo-container">
+                    <img v-for="(path, index) in clientLogoPaths" :src="require('../assets/' + path)"
+                         :key="index" :alt="'Client logo ' + index">
+                </div>
+            </template>
+        </landing-banner>
 
         <div class="features-home-section">
             <v-container class="features-container">
@@ -575,7 +579,7 @@
 
 <script>
     // @ is an alias to /src
-    // import LandingBanner from '@/components/LandingBanner.vue';
+    import LandingBanner from '@/components/LandingBanner.vue';
     import SecondaryBtnRow from '@/components/SecondaryBtnRow1.vue';
     import { mdiArrowLeft } from '@mdi/js';
     import { mdiArrowRight } from '@mdi/js';
@@ -589,9 +593,9 @@
                 { name: 'description', content: '' }
             ]
         },
-        // components: {
-        //     LandingBanner, SecondaryBtnRow
-        // },
+        components: {
+            LandingBanner, SecondaryBtnRow
+        },
         data() {
             return {
                 testimonialWindow: 0,

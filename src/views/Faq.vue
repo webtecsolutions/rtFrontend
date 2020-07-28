@@ -10,6 +10,10 @@
         Below you will find an answers to the questions.
       </template>
 
+      <template v-slot:image>
+        <img :src="require('../assets/About/banner.png')" alt="Home banner image">
+      </template>
+
       <template v-slot:main>
         <secondary-btn-row text1="General" text2="Docket"/>
       </template>

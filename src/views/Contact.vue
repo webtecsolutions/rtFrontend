@@ -10,6 +10,10 @@
         Alternatively, view our FAQ’s for already answered questions.
       </template>
 
+      <template v-slot:image>
+        <img :src="require('../assets/About/banner.png')" alt="Home banner image">
+      </template>
+
       <template v-slot:main>
         <v-form ref="form" v-model="valid" class="contact-form">
           <v-row no-gutters class="form-row">
