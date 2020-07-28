@@ -1,6 +1,6 @@
 <template>
     <div>
-        <landing-banner bg-image="About/banner.png">
+        <landing-banner>
             <template v-slot:title>
                 Record Time <span>Pricing</span> No hidden fees and charges
             </template>
@@ -258,7 +258,7 @@
 
     export default {
         metaInfo: {
-            title: 'Record Time',
+            title: 'Pricing',
             titleTemplate: 'Record Time → %s',
             meta: [
                 { name: 'name', content: '' },

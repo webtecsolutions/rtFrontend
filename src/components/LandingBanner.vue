@@ -12,7 +12,7 @@
                 <slot name="main"/>
             </v-flex>
         </v-layout>
-        <img :src="require('../assets/' + bgImage)" alt="How it works">
+        <img :src="computedLandingBannerImg(bgImage)" v-if="bgImage" alt="How it works">
     </v-container>
 </template>
 
@@ -106,6 +106,8 @@
 
 <script>
     // @ is an alias to /src
+    import bannerImageHome from '@/assets/Home/banner.png';
+    import bannerImageBanner from '@/assets/About/banner.png';
 
     export default {
         metaInfo: {
@@ -119,12 +121,23 @@
         props: {
             bgImage: {
                 type: String,
-                default: ""
+                default: "About"
             }
         },
         data() {
             return {
+              bannerImageHome: bannerImageHome,
+              bannerImageBanner: bannerImageBanner
             }
+        },
+        methods: {
+          computedLandingBannerImg(pageName) {
+            if (pageName === 'Home') {
+              return bannerImageHome;
+            } else {
+              return bannerImageBanner;
+            }
+          }
         }
     }
 </script>

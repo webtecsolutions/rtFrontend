@@ -1,6 +1,6 @@
 <template>
     <div>
-        <landing-banner bg-image="About/banner.png">
+        <landing-banner>
             <template v-slot:title>
                 Record Time, The Ultimate digital <span>docketing solution</span>
             </template>
@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="features-row">
-                    <img src="../assets/Home/laptop-docket.png">
+                    <img src="../assets/About/ipadnmobile.png">
                     <div class="text-section">
                         <p>1. Easy Docket Templates</p>
                         <h3>Modular Dockets</h3>
@@ -83,11 +83,11 @@
                         </p>
                         <a>See all features</a>
                     </div>
-                    <img src="../assets/Home/ipad.png">
+                    <img src="../assets/About/laptop.png">
                 </div>
 
                 <div class="features-row">
-                    <img src="../assets/Home/laptop-docket2.png">
+                    <img src="../assets/About/ipadonly.png">
                     <div class="text-section">
                         <p>3. Easy Docket Templates</p>
                         <h3>Modular Dockets</h3>
@@ -328,10 +328,11 @@
     import LandingBanner from '@/components/LandingBanner.vue';
     import SecondaryBtnRow from '@/components/SecondaryBtnRow1.vue';
     import { mdiCheck } from '@mdi/js';
+    import bannerImage from '@/assets/About/banner.png';
 
     export default {
         metaInfo: {
-            title: 'Record Time',
+            title: 'About',
             titleTemplate: 'Record Time → %s',
             meta: [
                 { name: 'name', content: '' },
@@ -347,15 +348,16 @@
                 mdiCheck: mdiCheck,
                 clientLogoPaths: [
                     '1.png',
-                    '1.png',
-                    '1.png',
-                    '1.png',
-                    '1.png',
-                    '1.png',
-                    '1.png',
-                    '1.png'
+                    '2.png',
+                    '3.png',
+                    '4.png',
+                    '5.png',
+                    '6.png',
+                    '7.png',
+                    '8.png'
                 ],
-                landingBannerContainerWidth: 0
+                landingBannerContainerWidth: 0,
+                bannerImage: bannerImage
             }
         },
         mounted() {

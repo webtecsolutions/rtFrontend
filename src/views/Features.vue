@@ -1,6 +1,6 @@
 <template>
     <div>
-        <landing-banner bg-image="About/banner.png">
+        <landing-banner>
             <template v-slot:title>
                 Record Time, Explore some of our <span>core features</span>
             </template>
@@ -17,7 +17,7 @@
                             <v-btn fab color="accent">
                                 <v-icon dark>{{mdiPlay}}</v-icon>
                             </v-btn>
-                            <img src="https://via.placeholder.com/400x400">
+                            <img :src="require('../assets/Features/thumb1.png')">
                             <div class="thumbnail-action">
                                 <div>Bundy Clock</div>
                                 <div>
@@ -30,7 +30,7 @@
                             <v-btn fab color="accent">
                                 <v-icon dark>{{mdiPlay}}</v-icon>
                             </v-btn>
-                            <img src="https://via.placeholder.com/400x400">
+                          <img :src="require('../assets/Features/thumb2.png')">
                             <div class="thumbnail-action">
                                 <div>Bundy Clock</div>
                                 <div>
@@ -488,7 +488,7 @@
 
     export default {
         metaInfo: {
-            title: 'Record Time',
+            title: 'Features',
             titleTemplate: 'Record Time → %s',
             meta: [
                 { name: 'name', content: '' },

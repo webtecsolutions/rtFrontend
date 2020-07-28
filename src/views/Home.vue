@@ -1,6 +1,6 @@
 <template>
     <div>
-        <landing-banner bg-image="Home/banner.png">
+        <landing-banner bg-image="Home">
             <template v-slot:title>
                 Easy <span>document solution</span> in your smartphone
             </template>
@@ -582,7 +582,7 @@
 
     export default {
         metaInfo: {
-            title: 'Record Time',
+            title: 'Home',
             titleTemplate: 'Record Time → %s',
             meta: [
                 { name: 'name', content: '' },
