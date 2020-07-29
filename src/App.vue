@@ -13,7 +13,7 @@
             </slot>
           </v-app-bar-nav-icon>
           <a @click="$router.push({ name: 'home'})">
-            <v-img :src="require('@/assets/logo-light.webp')" :width="$vuetify.breakpoint.mdAndDown ? 100 : 160"/>
+            <v-img :src="require('@/assets/logo-light.jpg')" :width="$vuetify.breakpoint.mdAndDown ? 100 : 160"/>
           </a>
 
           <div class="hidden-md-and-down ml-md-14">

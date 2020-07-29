@@ -674,11 +674,11 @@ export default {
         }
       ],
       clientLogoPaths: [
-        'logo-light.webp',
-        'logo-light.webp',
-        'logo-light.webp',
-        'logo-light.webp',
-        'logo-light.webp'
+        'logo-light.jpg',
+        'logo-light.jpg',
+        'logo-light.jpg',
+        'logo-light.jpg',
+        'logo-light.jpg'
       ]
     }
   },
