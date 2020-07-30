@@ -15,12 +15,13 @@
       </template>
 
       <template v-slot:main>
-        <secondary-btn-row text1="Less then 5 members" text2="More members"/>
+        <secondary-btn-row text1="Less then 5 members" text2="More members"
+                           @firstBtnClicked="firstBtnClicked" @secondBtnClicked="secondBtnClicked"/>
       </template>
     </landing-banner>
 
     <v-container class="pricing-cards-wrapper">
-      <div class="pricing-card" v-for="(pricingCard, index) in pricingCards" :key="index">
+      <div class="pricing-card" v-for="(pricingCard, index) in computedPricingCards" :key="index">
         <div class="pre-title-border"/>
         <h3>{{ pricingCard.users }} Users Plan</h3>
         <div class="post-title-border"/>
@@ -278,7 +279,7 @@ export default {
   },
   data() {
     return {
-      pricingCards: [
+      defaultPricingCards: [
         {
           users: "2-4",
           price: "70",
@@ -294,7 +295,29 @@ export default {
           price: "140",
           employeeCount: "10-14"
         }
-      ]
+      ],
+      computedPricingCards: []
+    }
+  },
+  mounted() {
+    this.computedPricingCards = this.defaultPricingCards;
+  },
+  methods: {
+    firstBtnClicked() {
+      this.computedPricingCards = this.defaultPricingCards.slice(0, 1);
+      this.$vuetify.goTo(
+          document.getElementsByClassName('pricing-cards-wrapper')[0], {
+            offset: 50
+          }
+      );
+    },
+    secondBtnClicked() {
+      this.computedPricingCards = this.defaultPricingCards.slice(1, 3);
+      this.$vuetify.goTo(
+          document.getElementsByClassName('pricing-cards-wrapper')[0], {
+            offset: 50
+          }
+      );
     }
   }
 }

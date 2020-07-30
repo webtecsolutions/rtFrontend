@@ -17,8 +17,8 @@
       <template v-slot:main>
         <div class="thumbnail-container">
           <div class="thumbnail-row">
-            <div class="thumbnail">
-              <v-btn fab color="accent">
+            <div class="thumbnail" @click="firstThumbnailClicked">
+              <v-btn fab color="accent" @click="firstThumbnailClicked">
                 <v-icon dark>{{ mdiPlay }}</v-icon>
               </v-btn>
               <img :src="require('../assets/Features/thumb1.png')">
@@ -31,8 +31,8 @@
               </div>
             </div>
 
-            <div class="thumbnail">
-              <v-btn fab color="accent">
+            <div class="thumbnail" @click="secondThumbnailClicked">
+              <v-btn fab color="accent" @click="secondThumbnailClicked">
                 <v-icon dark>{{ mdiPlay }}</v-icon>
               </v-btn>
               <img :src="require('../assets/Features/thumb2.png')">
@@ -46,9 +46,11 @@
             </div>
           </div>
 
-          <a class="see-more-link">
+          <a class="see-more-link" @click="scrollToFeaturesSection">
             <div class="icon-shadow">
-              <v-icon color="primary" size="20">{{ mdiArrowDown }}</v-icon>
+              <v-icon color="primary" size="20">
+                {{ mdiArrowDown }}
+              </v-icon>
             </div>
             Scroll down to See More!
           </a>
@@ -100,6 +102,8 @@
         <img :src="logo" v-for="(logo, index) in organisationsLogo" :key="index">
       </div>
     </v-container>
+
+    <video-modal v-if="showModal" @showModal="transitionend" :url="url"/>
   </div>
 </template>
 
@@ -117,6 +121,11 @@
       width: 50%;
       max-width: 400px;
       margin-bottom: 24px;
+
+      &:hover, &:focus {
+        transform: scale(0.99);
+        cursor: pointer;
+      }
 
       @media only screen and (max-width: 600px) {
         width: unset;
@@ -495,6 +504,7 @@
 <script>
 // @ is an alias to /src
 import LandingBanner from '@/components/LandingBanner.vue';
+import VideoModal from '@/components/VideoModal.vue';
 import {mdiHeart} from '@mdi/js';
 import {mdiPlay} from '@mdi/js';
 import {mdiArrowDown} from '@mdi/js';
@@ -509,7 +519,7 @@ export default {
     ]
   },
   components: {
-    LandingBanner
+    LandingBanner, VideoModal
   },
   data() {
     return {
@@ -566,7 +576,29 @@ export default {
         'https://via.placeholder.com/400x400',
         'https://via.placeholder.com/400x400',
         'https://via.placeholder.com/400x400'
-      ]
+      ],
+      showModal: false,
+      url: ""
+    }
+  },
+  methods: {
+    firstThumbnailClicked() {
+      this.showModal = true;
+      this.url = "https://www.youtube.com/embed/0CZk9VPPy78";
+    },
+    secondThumbnailClicked() {
+      this.showModal = true;
+      this.url = "https://www.youtube.com/embed/UBakWdI5Qzk";
+    },
+    transitionend() {
+      this.showModal = false;
+    },
+    scrollToFeaturesSection() {
+      this.$vuetify.goTo(
+          document.getElementsByClassName('features-featured-section')[0], {
+            offset: 0
+          }
+      );
     }
   }
 }

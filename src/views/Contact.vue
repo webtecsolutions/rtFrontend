@@ -54,7 +54,8 @@
         <p class="faq-content__title">Still need help? Send us an email!</p>
         <p class="faq-content__desc">
           For any other questions, please write us at
-          <span>info@recordtime.com.au</span> or <span>0421 955 630</span>
+          <a href = "mailto:info@recordtime.com.au">info@recordtime.com.au</a> or
+          <a href="tel:0421955630">0421 955 630</a>
         </p>
       </div>
 
@@ -148,7 +149,7 @@
       text-align: center;
       color: $black-pearl;
 
-      span {
+      a {
         color: $faux-dark-turquoise;
         text-decoration: underline;
       }

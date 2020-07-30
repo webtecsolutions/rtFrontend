@@ -81,10 +81,10 @@ export default {
   },
   methods: {
     btnClicked1() {
-      this.$emit('click1');
+      this.$emit('firstBtnClicked');
     },
     btnClicked2() {
-      this.$emit('click2');
+      this.$emit('secondBtnClicked');
     }
   }
 }

@@ -15,7 +15,7 @@
       </template>
 
       <template v-slot:main>
-        <secondary-btn-row/>
+        <secondary-btn-row @firstBtnClicked="firstBtnClicked" @secondBtnClicked="secondBtnClicked"/>
 
         <div class="client-logo-container">
           <img v-for="(path, index) in clientLogoPaths" :src="require('../assets/' + path)"
@@ -39,7 +39,9 @@
               Record Time allows you to easily create docket templates.
               You can design your docket to look and work exactly the way you want it.
             </p>
-            <a>See all features</a>
+            <a @click="$router.push({ name: 'features'})">
+              See all features
+            </a>
           </div>
         </div>
 
@@ -52,7 +54,9 @@
               with the flexibility to be used in any industry.
               With record time you can recreate any of your paper work.
             </p>
-            <a>See all features</a>
+            <a @click="$router.push({ name: 'features'})">
+              See all features
+            </a>
           </div>
           <img src="../assets/Home/ipad.png">
         </div>
@@ -66,7 +70,9 @@
               Record Time allows you to easily create docket templates.
               You can design your docket to look and work exactly the way you want it.
             </p>
-            <a>See all features</a>
+            <a @click="$router.push({ name: 'features'})">
+              See all features
+            </a>
           </div>
         </div>
       </v-container>
@@ -125,6 +131,8 @@
         </v-window-item>
       </v-window>
     </v-container>
+
+    <video-modal v-if="showModal" @showModal="transitionend" url="https://www.youtube.com/embed/62kV7CIU_F4"/>
   </div>
 </template>
 
@@ -601,6 +609,7 @@
 // @ is an alias to /src
 import LandingBanner from '@/components/LandingBanner.vue';
 import SecondaryBtnRow from '@/components/SecondaryBtnRow1.vue';
+import VideoModal from '@/components/VideoModal.vue';
 import {mdiArrowLeft} from '@mdi/js';
 import {mdiArrowRight} from '@mdi/js';
 
@@ -614,7 +623,7 @@ export default {
     ]
   },
   components: {
-    LandingBanner, SecondaryBtnRow
+    LandingBanner, SecondaryBtnRow, VideoModal
   },
   data() {
     return {
@@ -683,7 +692,8 @@ export default {
         'logo-light.jpg',
         'logo-light.jpg',
         'logo-light.jpg'
-      ]
+      ],
+      showModal: false
     }
   },
   computed: {
@@ -708,6 +718,14 @@ export default {
         results.push(myArray.splice(0, chunk_size));
       }
       return results;
+    },
+    firstBtnClicked() {
+    },
+    secondBtnClicked() {
+      this.showModal = true;
+    },
+    transitionend() {
+      this.showModal = false;
     }
   }
 }

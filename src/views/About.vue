@@ -16,7 +16,7 @@
       </template>
 
       <template v-slot:main>
-        <secondary-btn-row/>
+        <secondary-btn-row @firstBtnClicked="firstBtnClicked" @secondBtnClicked="secondBtnClicked"/>
 
         <p class="customers-container-prefix">
           +1.000 people around the world using Record Time app
@@ -72,7 +72,7 @@
               Record Time allows you to easily create docket templates.
               You can design your docket to look and work exactly the way you want it.
             </p>
-            <a>See all features</a>
+            <a @click="$router.push({ name: 'features'})">See all features</a>
           </div>
         </div>
 
@@ -85,7 +85,7 @@
               with the flexibility to be used in any industry.
               With record time you can recreate any of your paper work.
             </p>
-            <a>See all features</a>
+            <a @click="$router.push({ name: 'features'})">See all features</a>
           </div>
           <img src="../assets/About/laptop.png">
         </div>
@@ -99,11 +99,13 @@
               Record Time allows you to easily create docket templates.
               You can design your docket to look and work exactly the way you want it.
             </p>
-            <a>See all features</a>
+            <a @click="$router.push({ name: 'features'})">See all features</a>
           </div>
         </div>
       </v-container>
     </div>
+
+    <video-modal v-if="showModal" @showModal="transitionend" url="https://www.youtube.com/embed/62kV7CIU_F4"/>
   </div>
 </template>
 
@@ -347,6 +349,7 @@ import LandingBanner from '@/components/LandingBanner.vue';
 import SecondaryBtnRow from '@/components/SecondaryBtnRow1.vue';
 import {mdiCheck} from '@mdi/js';
 import bannerImage from '@/assets/About/banner.png';
+import VideoModal from '@/components/VideoModal.vue';
 
 export default {
   metaInfo: {
@@ -358,7 +361,7 @@ export default {
     ]
   },
   components: {
-    LandingBanner, SecondaryBtnRow
+    LandingBanner, SecondaryBtnRow, VideoModal
   },
   data() {
     return {
@@ -375,7 +378,8 @@ export default {
         '8.png'
       ],
       landingBannerContainerWidth: 0,
-      bannerImage: bannerImage
+      bannerImage: bannerImage,
+      showModal: false
     }
   },
   mounted() {
@@ -400,12 +404,13 @@ export default {
     }
   },
   methods: {
-    chunkArray(myArray, chunk_size) {
-      let results = [];
-      while (myArray.length) {
-        results.push(myArray.splice(0, chunk_size));
-      }
-      return results;
+    firstBtnClicked() {
+    },
+    secondBtnClicked() {
+      this.showModal = true;
+    },
+    transitionend() {
+      this.showModal = false;
     }
   }
 }

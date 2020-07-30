@@ -36,7 +36,7 @@
             <div class="play-btn-container">
               <img src="../assets/Footer/btn-blur.svg" alt="Background blur">
 
-              <v-btn fab color="accent">
+              <v-btn fab color="accent" @click="showModal = true">
                 <v-icon dark>{{ mdiPlay }}</v-icon>
               </v-btn>
             </div>
@@ -56,7 +56,9 @@
             and allow you to spend less time chasing paper docket approvals.
           </p>
 
-          <p :class="$vuetify.breakpoint.smAndDown ? 'text-center' : ''">Support: 0421 955 630</p>
+          <p :class="$vuetify.breakpoint.smAndDown ? 'text-center' : ''">
+            Support: <a href="tel:0421955630">0421 955 630</a>
+          </p>
         </v-col>
 
         <v-col sm="12" md="2" :offset="$vuetify.breakpoint.xsOnly ? 0 : 1" cols="12"
@@ -64,8 +66,8 @@
           <h3>Company</h3>
 
           <ul class="mt-6">
-            <li>About Us</li>
-            <li>FAQ</li>
+            <li @click="$router.push({ name: 'about'})">About Us</li>
+            <li @click="$router.push({ name: 'faq'})">FAQ</li>
             <li>Our Blogs</li>
           </ul>
         </v-col>
@@ -74,8 +76,7 @@
           <h3>Resource</h3>
 
           <ul class="mt-6">
-            <li>FAQs</li>
-            <li>Contact Us</li>
+            <li @click="$router.push({ name: 'contact'})">Contact Us</li>
             <li>Terms of Use</li>
             <li>License Agreement</li>
             <li>How To's</li>
@@ -173,6 +174,8 @@
         <v-col cols="12" sm="12" md="6">Privacy Policy</v-col>
       </v-row>
     </v-container>
+
+    <video-modal v-if="showModal" @showModal="transitionend" url="https://www.youtube.com/embed/62kV7CIU_F4"/>
   </v-footer>
 </template>
 
@@ -536,16 +539,21 @@ import {mdiGoogle} from '@mdi/js';
 import {mdiTwitter} from '@mdi/js';
 import {mdiPlus} from '@mdi/js';
 import {mdiPlay} from '@mdi/js';
+import VideoModal from '@/components/VideoModal.vue';
 
 
 export default {
+  components: {
+    VideoModal
+  },
   data() {
     return {
       mdiFacebook: mdiFacebook,
       mdiGoogle: mdiGoogle,
       mdiTwitter: mdiTwitter,
       mdiPlus: mdiPlus,
-      mdiPlay: mdiPlay
+      mdiPlay: mdiPlay,
+      showModal: false
     }
   },
   methods: {
@@ -554,6 +562,9 @@ export default {
     },
     goToAppleAppStore() {
       window.open('', '_blank');
+    },
+    transitionend() {
+      this.showModal = false;
     }
   }
 }
