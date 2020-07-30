@@ -38,6 +38,7 @@
       height: 288px;
       transform: unset;
       width: inherit;
+      object-fit: contain;
     }
   }
 

@@ -171,6 +171,10 @@
   background-color: $alice-grey;
   margin-top: 110px;
 
+  @media only screen and (max-width: 600px) {
+    margin-top: 20px;
+  }
+
   .features-container {
     padding-top: 40px;
 

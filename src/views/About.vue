@@ -124,6 +124,11 @@
     min-width: 10px;
     flex-grow: 1;
 
+    @media only screen and (max-width: 600px) {
+      object-fit: cover;
+      object-position: top;
+    }
+
     &:last-of-type {
       margin-right: 0;
     }
@@ -135,7 +140,7 @@
   margin-top: 110px;
 
   @media only screen and (max-width: 600px) {
-    margin-top: 50px;
+    margin-top: 20px;
   }
 
   .features-container {
