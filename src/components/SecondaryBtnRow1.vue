@@ -2,7 +2,7 @@
     <div class="secondary-btn-row1">
         <v-btn color="secondary" height="55" :width="$vuetify.breakpoint.xsOnly ? '' : '236'"
                @click="btnClicked1" class="mr-7 btn-1" elevation="0">
-            Start my free trial
+            START YOUR FREE TRIAL
         </v-btn>
 
         <v-btn color="white" height="55" :width="$vuetify.breakpoint.xsOnly ? '' : '236'"
@@ -10,7 +10,7 @@
             <div class="icon-shadow">
                 <v-icon color="primary" size="20">{{mdiPlay}}</v-icon>
             </div>
-            How Record TIME Works?
+            What is Record TIME?
         </v-btn>
     </div>
 </template>

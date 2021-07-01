@@ -2,7 +2,7 @@
   <div>
     <landing-banner>
       <template v-slot:title>
-        Record Time, Explore some of our <span>core features</span>
+        Explore some of our <span>core features</span>
       </template>
 
       <template v-slot:subTitle>
@@ -96,10 +96,10 @@
     <v-container class="organisations-container">
       <p>suitable across all industries</p>
 
-      <h3>Over <span>100,000+</span> Organizations Rely on Record Time</h3>
+      <h3><span>Organisations</span> That Rely on Record TIME:</h3>
 
       <div class="organisations-row">
-        <img :src="logo" v-for="(logo, index) in organisationsLogo" :key="index">
+        <img :src="require('@/assets/Home/Testimonials/' + logo)" v-for="(logo, index) in organisationsLogo" :key="index" style="object-fit: contain;">
       </div>
     </v-container>
 
@@ -529,7 +529,7 @@ export default {
       featureItems: [
         {
           'imgPath': '',
-          'title': 'Xero Integration',
+          'title': 'Digital Dockets and Forms',
           'description': 'Record Time allows you to easily create docket templates. ' +
               'You can design your docket to look and work exactly the way you want it. ' +
               'It is straightforward to use and can replace your business processes. ' +
@@ -537,7 +537,7 @@ export default {
         },
         {
           'imgPath': '',
-          'title': 'Xero Integration',
+          'title': 'Job Scheduler',
           'description': 'Record Time allows you to easily create docket templates. ' +
               'You can design your docket to look and work exactly the way you want it. ' +
               'It is straightforward to use and can replace your business processes. ' +
@@ -545,7 +545,7 @@ export default {
         },
         {
           'imgPath': '',
-          'title': 'Xero Integration',
+          'title': 'Plant Management',
           'description': 'Record Time allows you to easily create docket templates. ' +
               'You can design your docket to look and work exactly the way you want it. ' +
               'It is straightforward to use and can replace your business processes. ' +
@@ -553,7 +553,7 @@ export default {
         },
         {
           'imgPath': '',
-          'title': 'Xero Integration',
+          'title': 'Invoicing',
           'description': 'Record Time allows you to easily create docket templates. ' +
               'You can design your docket to look and work exactly the way you want it. ' +
               'It is straightforward to use and can replace your business processes. ' +
@@ -561,7 +561,15 @@ export default {
         },
         {
           'imgPath': '',
-          'title': 'Xero Integration',
+          'title': 'Bundy Clock/Timer',
+          'description': 'Record Time allows you to easily create docket templates. ' +
+              'You can design your docket to look and work exactly the way you want it. ' +
+              'It is straightforward to use and can replace your business processes. ' +
+              'The difficulties with getting dockets signed and storing them are a thing of the past.'
+        },
+        {
+          'imgPath': '',
+          'title': 'Export Mapper',
           'description': 'Record Time allows you to easily create docket templates. ' +
               'You can design your docket to look and work exactly the way you want it. ' +
               'It is straightforward to use and can replace your business processes. ' +
@@ -569,13 +577,10 @@ export default {
         }
       ],
       organisationsLogo: [
-        'https://via.placeholder.com/400x400',
-        'https://via.placeholder.com/400x400',
-        'https://via.placeholder.com/400x400',
-        'https://via.placeholder.com/400x400',
-        'https://via.placeholder.com/400x400',
-        'https://via.placeholder.com/400x400',
-        'https://via.placeholder.com/400x400'
+        'fortify-geotech1558673676.jpg',
+        'geotechnical-engineers1558673481.jpg',
+        'large-concerete-pumpling1557205496.jpg',
+        'alexander-symonds1557205465.jpg',
       ],
       showModal: false,
       url: ""

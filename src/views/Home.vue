@@ -2,12 +2,11 @@
   <div>
     <landing-banner>
       <template v-slot:title>
-        Easy <span>document solution</span> in your smartphone
+        All Your <span>Forms & Dockets</span> in your smartphone
       </template>
 
       <template v-slot:subTitle>
-        Record TIME will replace your tedious paper systems and allow you to spend less time chasing paper docket
-        approvals.
+        Record TIME is a one stop paperwork and job management system that will digitise and streamline your business.
       </template>
 
       <template v-slot:image>
@@ -33,11 +32,10 @@
         <div class="features-row">
           <img src="../assets/Home/laptop-docket.png">
           <div class="text-section">
-            <p>1. Easy Docket Templates</p>
-            <h3>Modular Dockets</h3>
+            <p>1. Easy Templates</p>
+            <h3>Modular Dockets and Forms</h3>
             <p>
-              Record Time allows you to easily create docket templates.
-              You can design your docket to look and work exactly the way you want it.
+             Record Time allows you to create docket/ form templates and replicate any paperwork. Design the document to look and work exactly the way you want it to work.
             </p>
             <a @click="$router.push({ name: 'features'})">
               See all features
@@ -47,12 +45,10 @@
 
         <div class="features-row">
           <div class="text-section">
-            <p>2. Tested and Industry Approved</p>
-            <h3>Industry Proven Solution</h3>
+            <p>2. Job Scheduler</p>
+            <h3>Schedule Staff and Plant</h3>
             <p>
-              Record time is designed and proven in the construction industry,
-              with the flexibility to be used in any industry.
-              With record time you can recreate any of your paper work.
+             Easily schedule your staff & plant. Let your staff know where, with who and how they are working.  Make changes on the fly and keep track of resource utilisation.
             </p>
             <a @click="$router.push({ name: 'features'})">
               See all features
@@ -64,11 +60,10 @@
         <div class="features-row">
           <img src="../assets/Home/laptop-docket2.png">
           <div class="text-section">
-            <p>3. Easy Docket Templates</p>
-            <h3>Modular Dockets</h3>
+            <p>3. Designed for Safety</p>
+            <h3>Safety  & Compliance.</h3>
             <p>
-              Record Time allows you to easily create docket templates.
-              You can design your docket to look and work exactly the way you want it.
+              Use our templating engine to create pre-start checklists, SWMS and risk assessments. Keep your auditors happy and readily ensure your staff are operating safely.
             </p>
             <a @click="$router.push({ name: 'features'})">
               See all features
@@ -106,7 +101,7 @@
     <v-container class="testimonial-section">
       <p>Complete Docketing Solution</p>
 
-      <h2>Core Features of Record Time</h2>
+      <h2>Success Stories</h2>
 
       <v-window v-model="testimonialWindow" vertical show-arrows :prev-icon="mdiArrowLeft" :next-icon="mdiArrowRight">
         <v-window-item v-for="(chunkedTestimonial, index1) in computedTestimonials" :key="index1">
@@ -149,6 +144,7 @@
       margin-bottom: 24px;
     }
   }
+  
 
   @media only screen and (min-width: 600px) and (max-width: 1264px) {
     text-align: center;
@@ -173,6 +169,10 @@
       margin-right: 0;
     }
   }
+}
+
+.v-image__image{
+  background-size:100%
 }
 
 .features-home-section {
@@ -554,6 +554,7 @@
               padding: 0;
               border-radius: 5px;
               box-shadow: 0 2px 12px 0 rgba(2, 18, 34, 0.08);
+              height: 100%;
 
               div.v-card__text {
                 padding: 21px 30px 63px 30px;
@@ -561,6 +562,8 @@
                 font-style: italic;
                 line-height: 1.71;
                 color: $black-pearl;
+                max-height: 390px;
+                height: 100%;
               }
 
               div.v-card__actions {
@@ -632,58 +635,28 @@ export default {
       mdiArrowRight: mdiArrowRight,
       testimonials: [
         {
-          content: "Now that safety on work sites (particularly in construction), is such a big issue for employers to" +
-              "be aware of, my employees can also customize the dockets to become a Job Safety Assessment (JSA)," +
-              " that can be filled out before working on site. This covers both employers and employees in case of" +
-              " a safety breach, and again, it is all accessible on the back end. The JSA can be sent to both the supervisor and the client.",
-          image: "1.jpg",
-          jobTitle: "CEO at Fortify Geotech",
-          name: "Dean Robinson"
+          content: "Now that safety on work sites (particularly in construction), is such a big issue for employers to be aware of, my employees can also customize the dockets to become a Job Safety Assessment (JSA), that can be filled out before working on site. This covers both employers and employees in case of a safety breach, and again, it is all accessible on the back end. The JSA can be sent to both the supervisor and the client.",
+          image: "fortify-geotech1558673676.jpg",
+          jobTitle: "Fortify Geotech",
+          name: "Allison"
         },
         {
-          content: "Now that safety on work sites (particularly in construction), is such a big issue for employers to" +
-              "be aware of, my employees can also customize the dockets to become a Job Safety Assessment (JSA)," +
-              " that can be filled out before working on site. This covers both employers and employees in case of" +
-              " a safety breach, and again, it is all accessible on the back end. The JSA can be sent to both the supervisor and the client.",
-          image: "1.jpg",
-          jobTitle: "CEO at Fortify Geotech",
-          name: "Dean Robinson"
+          content: "Record Time has transformed my engineering business. Our engineers now use Record Time to produce engineering inspection and certification reports, with the report including photos of the inspected item and our signature. Best of all, I can edit the photo (or a photo of an engineering plan) to mark up what has been inspected or needs to be modified before it can be certified. The inspections dockets can also double as proof of work, so when it comes to the end of the month, I have a verified docket to include on my invoice to the client.",
+          image: "geotechnical-engineers1558673481.jpg",
+          jobTitle: "ACT Geotechnical Engineers",
+          name: "Jeremy"
         },
         {
-          content: "Now that safety on work sites (particularly in construction), is such a big issue for employers to" +
-              "be aware of, my employees can also customize the dockets to become a Job Safety Assessment (JSA)," +
-              " that can be filled out before working on site. This covers both employers and employees in case of" +
-              " a safety breach, and again, it is all accessible on the back end. The JSA can be sent to both the supervisor and the client.",
-          image: "1.jpg",
-          jobTitle: "CEO at Fortify Geotech",
-          name: "Dean Robinson"
+          content: "Record Time is our companies secret weapon. Eliminating the use of docket books, logbooks, and paper reports have allowed us to streamline our processes. It gives us access to real-time information for billing and compliance reporting. It is easy to use and gives us endless options on what dockets or checklists we can create. Our company now runs paper-free and clients are more than impressed when information requests are fulfilled at the press of a button. Incomplete or duplicate information is a thing of the past with the help of Record Time.",
+          image: "large-concerete-pumpling1557205496.jpg",
+          jobTitle: "Large Concrete Pumping PTY LTD, QLD",
+          name: "Kelly Large"
         },
         {
-          content: "Now that safety on work sites (particularly in construction), is such a big issue for employers to" +
-              "be aware of, my employees can also customize the dockets to become a Job Safety Assessment (JSA)," +
-              " that can be filled out before working on site. This covers both employers and employees in case of" +
-              " a safety breach, and again, it is all accessible on the back end. The JSA can be sent to both the supervisor and the client.",
-          image: "1.jpg",
-          jobTitle: "CEO at Fortify Geotech",
-          name: "Dean Robinson"
-        },
-        {
-          content: "Now that safety on work sites (particularly in construction), is such a big issue for employers to" +
-              "be aware of, my employees can also customize the dockets to become a Job Safety Assessment (JSA)," +
-              " that can be filled out before working on site. This covers both employers and employees in case of" +
-              " a safety breach, and again, it is all accessible on the back end. The JSA can be sent to both the supervisor and the client.",
-          image: "1.jpg",
-          jobTitle: "CEO at Fortify Geotech",
-          name: "Dean Robinson"
-        },
-        {
-          content: "Now that safety on work sites (particularly in construction), is such a big issue for employers to" +
-              "be aware of, my employees can also customize the dockets to become a Job Safety Assessment (JSA)," +
-              " that can be filled out before working on site. This covers both employers and employees in case of" +
-              " a safety breach, and again, it is all accessible on the back end. The JSA can be sent to both the supervisor and the client.",
-          image: "1.jpg",
-          jobTitle: "CEO at Fortify Geotech",
-          name: "Dean Robinson"
+          content: "This is a great milestone for us as we had a negative experience with the last program we trialed, so we are very happy to now be rolling this [Record TIME] out to our staff",
+          image: "alexander-symonds1557205465.jpg",
+          jobTitle: "Alexander Symonds | Surveying Consultants, SA",
+          name: "Carly Zanini"
         }
       ],
       clientLogoPaths: [

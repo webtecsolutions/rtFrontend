@@ -14,9 +14,9 @@
         <img :src="require('../assets/About/banner.png')" alt="Home banner image">
       </template>
 
-      <template v-slot:main>
+      <!-- <template v-slot:main>
         <secondary-btn-row text1="General" text2="Docket"/>
-      </template>
+      </template> -->
     </landing-banner>
 
     <v-container class="accordions-wrapper">
@@ -43,7 +43,8 @@
       <div class="faq-content">
         <p class="faq-content__title">Still need help? Send us an email!</p>
         <p class="faq-content__desc">
-          For any other questions, please write us at
+          For more Questions, how-tos and other documentation please
+          <a href="https://help.recordtime.com.au/hc/en-us/categories/360000153335-General"> click here</a>
           <a href = "mailto:info@recordtime.com.au">info@recordtime.com.au</a> or
           <a href="tel:0421955630">0421 955 630</a>
         </p>
@@ -189,17 +190,11 @@ export default {
       faqs: [
         {
           title: "Can I cancel my subscription at any time?",
-          desc: "Once you have logged in to the back end with your username and " +
-              "password you can then go to the Employees Tab and select Update from the " +
-              "far right hand side. This then allows you to make changes to Employees Passwords " +
-              "and other associated information."
+          desc: "Yes. There are no lock in contracts. Payments are month to month and can be cancelled at any time. You can also upgrade/downgrade your account at any time."
         },
         {
-          title: "How many employees can I have on the system?",
-          desc: "Once you have logged in to the back end with your username and " +
-              "password you can then go to the Employees Tab and select Update from the " +
-              "far right hand side. This then allows you to make changes to Employees Passwords " +
-              "and other associated information."
+          title: "Are there set up costs?",
+          desc: "No set up costs as it stands. You can follow our help / how tos  and set it up yourself. If you do need assistance, we can organise someone and let you know the costs involved. Please get in touch if this is the case."
         },
         {
           title: "How can I change my password and my employees from the backend?",
@@ -209,18 +204,16 @@ export default {
               "and other associated information."
         },
         {
-          title: "What hours does Record Time offer support?",
-          desc: "Once you have logged in to the back end with your username and " +
-              "password you can then go to the Employees Tab and select Update from the " +
-              "far right hand side. This then allows you to make changes to Employees Passwords " +
-              "and other associated information."
+          title: "Do you offer support and what hours?",
+          desc: "Yes. All customers get basic support Monday-Friday during business hours. If you would like to purchase additional support, you may do so by visiting your subscription page."
         },
         {
-          title: "Can I send a docket from an Iphone to an Android Phone?",
-          desc: "Once you have logged in to the back end with your username and " +
-              "password you can then go to the Employees Tab and select Update from the " +
-              "far right hand side. This then allows you to make changes to Employees Passwords " +
-              "and other associated information."
+          title: "Where is Record Time based?",
+          desc: "Our head office is in Canberra. However, we have staff in Queensland, Sydney"
+        },
+        {
+          title: "Do you help us set up our account if needed?",
+          desc: "Yes. You can engage one of our onboarding specialists to fast-track your setup. Please get in touch for rates and other details."
         }
       ],
       mdiPlus: mdiPlus

@@ -2,25 +2,25 @@
   <div>
     <landing-banner>
       <template v-slot:title>
-        Record Time <span>Pricing</span> No hidden fees and charges
+        Flexible <span>Pricing</span> To suit your needs
       </template>
 
       <template v-slot:subTitle>
-        Sign up to the following plans to enjoy a full month free trial. Cancel anytime.
-        No hidden fees and charges!
+       From as little as a 1$ a day.
+        Please sign up  here to view custom plans to suit your needs.
       </template>
 
       <template v-slot:image>
         <img :src="require('../assets/About/banner.png')" alt="Home banner image">
       </template>
 
-      <template v-slot:main>
+      <!-- <template v-slot:main>
         <secondary-btn-row text1="Less then 5 members" text2="More members"
                            @firstBtnClicked="firstBtnClicked" @secondBtnClicked="secondBtnClicked"/>
-      </template>
+      </template> -->
     </landing-banner>
 
-    <v-container class="pricing-cards-wrapper">
+    <!-- <v-container class="pricing-cards-wrapper">
       <div class="pricing-card" v-for="(pricingCard, index) in computedPricingCards" :key="index">
         <div class="pre-title-border"/>
         <h3>{{ pricingCard.users }} Users Plan</h3>
@@ -50,10 +50,10 @@
           Sign up now
         </v-btn>
       </div>
-    </v-container>
+    </v-container> -->
 
     <v-container class="plan-notice-container">
-      <p>Looking for a plan with more users?</p>
+      <p>Looking to speak to someone?</p>
 
       <p>
         Please get in touch for a customised plan and pricing.
