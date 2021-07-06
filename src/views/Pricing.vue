@@ -11,7 +11,7 @@
       </template>
 
       <template v-slot:image>
-        <img :src="require('../assets/About/banner.png')" alt="Home banner image">
+        <img :src="require('../assets/pricing.jpg')" alt="Home banner image">
       </template>
 
       <!-- <template v-slot:main>
@@ -275,7 +275,7 @@ export default {
     ]
   },
   components: {
-    LandingBanner, SecondaryBtnRow
+    LandingBanner
   },
   data() {
     return {

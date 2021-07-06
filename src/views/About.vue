@@ -2,13 +2,11 @@
   <div>
     <landing-banner>
       <template v-slot:title>
-        Record Time, The Ultimate digital <span>docketing solution</span>
+        Developed For the <span>Construction Industry</span>
       </template>
 
       <template v-slot:subTitle>
-        Record Time is a fully customisable mobile software application suitable for Android or
-        IOS enabled smartphones or tablets. Together with its comprehensive back-end web site,
-        Record Time will provide you with a fully mobile digital docketing and invoice system.
+        Record TIME was born out of the Civil Industry in order to improve the docketing process. It was initially used for docketing and remote approvals of dockets. Today, Record TIME has grown into a management platform that any industry can use.
       </template>
 
       <template v-slot:image>
@@ -23,7 +21,7 @@
         </p>
         <div class="customers-container" :style="{ 'width': landingBannerContainerWidth + 'px' }">
           <img v-for="(path, index) in clientLogoPaths"
-               :src="require('../assets/About/Customers/' + path)"
+               :src="require('../assets/About/' + path)"
                :key="index" :alt="'Customer logo ' + index">
         </div>
       </template>
@@ -33,13 +31,12 @@
       <v-container class="features-container">
         <p>Complete Docketing Solution</p>
 
-        <h2>Core Features of Record Time</h2>
+        <h2>Why Record TIME?</h2>
 
         <p>
-          Record Time will make your tiresome paper-based system obsolete.
-          It will also allow <span>Pre-start checks, WH&S Safety Checklists, Proof of Delivery,
-                    and Inspection validation</span> of work completed. Our Application is suitable for a wide
-          variety of applications across all industries where paper docket approvals are needed.
+          Record TIME is more than a docketing app. This powerful management system will allow you to create
+          <span>Pre-start checklists, WH&S Safety Checklists, Timesheets, Proof of Delivery</span> 
+          and much more. Our application is suitable for a wide variety of usage across all industries where paper docket approvals are needed.
         </p>
 
         <div class="checklist-row">
@@ -47,45 +44,41 @@
             <v-avatar size="24" color="primary">
               <v-icon size="12" color="white">{{ mdiCheck }}</v-icon>
             </v-avatar>
-            <p>WH&S Safety Checklists</p>
+            <p>Flexible & Adaptable</p>
           </div>
           <div class="checklist-col">
             <v-avatar size="24" color="primary">
               <v-icon size="12" color="white">{{ mdiCheck }}</v-icon>
             </v-avatar>
-            <p>Allow Pre-start Checks</p>
+            <p>Easy to Use</p>
           </div>
           <div class="checklist-col">
             <v-avatar size="24" color="primary">
               <v-icon size="12" color="white">{{ mdiCheck }}</v-icon>
             </v-avatar>
-            <p>Inspection Validation of work</p>
+            <p>Industry Proven</p>
           </div>
         </div>
 
+        <h2>THE RECORD TIME JOURNEY</h2>
         <div class="features-row">
           <img src="../assets/About/ipadnmobile.png">
           <div class="text-section">
-            <p>1. Easy Docket Templates</p>
-            <h3>Modular Dockets</h3>
+            <p>1. Birth of Record Time</p>
+            <h3>2014</h3>
             <p>
-              Record Time allows you to easily create docket templates.
-              You can design your docket to look and work exactly the way you want it.
+              The first version of Record TIME was released in 2014. It was a prototype that we used to understand the needs and wants of our customers. We spoke to over 100+ Companies from different industries such as plumbing, concreting, earthworks and civil engineers to test our prototype
             </p>
-            <a @click="$router.push({ name: 'features'})">See all features</a>
           </div>
         </div>
 
         <div class="features-row">
           <div class="text-section">
-            <p>2. Tested and Industry Approved</p>
-            <h3>Industry Proven Solution</h3>
+            <p>2. Record Time Re-Launched</p>
+            <h3>2018</h3>
             <p>
-              Record time is designed and proven in the construction industry,
-              with the flexibility to be used in any industry.
-              With record time you can recreate any of your paper work.
+              Record TIME re-launches with a key feature: The Modular Form / Docket capability. This key innovation allowed us to replicate any forms into its digital equivalent. Further, armed with our market research, we released highly demanded features such as the bundy clock and job management tools.
             </p>
-            <a @click="$router.push({ name: 'features'})">See all features</a>
           </div>
           <img src="../assets/About/laptop.png">
         </div>
@@ -93,18 +86,15 @@
         <div class="features-row">
           <img src="../assets/About/ipadonly.png">
           <div class="text-section">
-            <p>3. Easy Docket Templates</p>
-            <h3>Modular Dockets</h3>
+            <p>3. Record Time Today</p>
+            <h3>App Used by Thousands</h3>
             <p>
-              Record Time allows you to easily create docket templates.
-              You can design your docket to look and work exactly the way you want it.
+             Record TIME has now evolved into a fully fledged docketing and job management system. It is used everyday by thousands of users across the construction industry. It is constantly evolving and the features that we build/release are features that customers want.
             </p>
-            <a @click="$router.push({ name: 'features'})">See all features</a>
           </div>
         </div>
       </v-container>
     </div>
-
     <video-modal v-if="showModal" @showModal="transitionend" url="https://www.youtube.com/embed/62kV7CIU_F4"/>
   </div>
 </template>
@@ -368,14 +358,12 @@ export default {
       testimonialWindow: 0,
       mdiCheck: mdiCheck,
       clientLogoPaths: [
-        '1.png',
-        '2.png',
-        '3.png',
-        '4.png',
-        '5.png',
-        '6.png',
-        '7.png',
-        '8.png'
+        '1.jpg',
+        '2.jpg',
+        '3.jpg',
+        '4.jpg',
+        '5.jpg',
+        '6.jpg'
       ],
       landingBannerContainerWidth: 0,
       bannerImage: bannerImage,

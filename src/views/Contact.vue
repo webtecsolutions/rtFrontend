@@ -46,8 +46,8 @@
 
     <v-container class="faq-notice-container">
       <div class="left-imgs">
-        <img :src="require('../assets/Faq/1.png')">
-        <img :src="require('../assets/Faq/2.png')">
+        <img :src="require('../assets/Contactus/1.jpg')">
+        <img :src="require('../assets/Contactus/2.jpg')">
       </div>
 
       <div class="faq-content">
@@ -60,8 +60,8 @@
       </div>
 
       <div class="right-imgs">
-        <img :src="require('../assets/Faq/3.png')">
-        <img :src="require('../assets/Faq/4.png')">
+        <img :src="require('../assets/Contactus/3.jpg')">
+        <img :src="require('../assets/Contactus/4.jpg')">
       </div>
     </v-container>
   </div>

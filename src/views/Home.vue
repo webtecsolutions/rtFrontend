@@ -86,7 +86,7 @@
 
         <div class="text-section">
           <h2>Get a Demo and Try Record Time Today!</h2>
-          <p>Try RECORD TIME for free for a month and start saving money!</p>
+          <p>Enter your email below and we will contact you for a demo</p>
 
           <div class="email-input-container">
             <v-text-field filled background-color="white" clearable flat full-width height="55" solo/>
@@ -651,12 +651,6 @@ export default {
           image: "large-concerete-pumpling1557205496.jpg",
           jobTitle: "Large Concrete Pumping PTY LTD, QLD",
           name: "Kelly Large"
-        },
-        {
-          content: "This is a great milestone for us as we had a negative experience with the last program we trialed, so we are very happy to now be rolling this [Record TIME] out to our staff",
-          image: "alexander-symonds1557205465.jpg",
-          jobTitle: "Alexander Symonds | Surveying Consultants, SA",
-          name: "Carly Zanini"
         }
       ],
       clientLogoPaths: [

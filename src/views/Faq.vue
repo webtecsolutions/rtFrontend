@@ -36,8 +36,8 @@
 
     <v-container class="faq-notice-container">
       <div class="left-imgs">
-        <img :src="require('../assets/Faq/1.png')">
-        <img :src="require('../assets/Faq/2.png')">
+        <img :src="require('../assets/Faq/5.jpg')">
+        <img :src="require('../assets/Faq/6.jpg')">
       </div>
 
       <div class="faq-content">
@@ -51,8 +51,8 @@
       </div>
 
       <div class="right-imgs">
-        <img :src="require('../assets/Faq/3.png')">
-        <img :src="require('../assets/Faq/4.png')">
+        <img :src="require('../assets/Faq/7.jpg')">
+        <img :src="require('../assets/Faq/8.jpg')">
       </div>
     </v-container>
   </div>
@@ -183,7 +183,7 @@ export default {
     ]
   },
   components: {
-    LandingBanner, SecondaryBtnRow
+    LandingBanner
   },
   data() {
     return {
