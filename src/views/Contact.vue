@@ -2,7 +2,7 @@
   <div>
     <landing-banner>
       <template v-slot:title>
-        Record Time Contact Us
+        Got a Question? <br> <span @click="$router.push({ name: 'contact'})">Contact Us</span>
       </template>
 
       <template v-slot:subTitle>

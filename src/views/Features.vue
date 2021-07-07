@@ -37,7 +37,7 @@
               </v-btn>
               <img :src="require('../assets/Features/thumb2.png')">
               <div class="thumbnail-action">
-                <div>Bundy Clock</div>
+                <div>Remote Docketing</div>
                 <div>
                   <v-icon color="error" size="12">{{ mdiHeart }}</v-icon>
                   <span>1,453</span>
@@ -79,8 +79,8 @@
               </div>
             </div>
 
-            <v-btn color="primary" block elevation="0" height="50" class="text-capitalize">
-              See all features now
+            <v-btn color="primary" block elevation="0" height="50" class="text-capitalize" @click="watchLink()">
+              Watch an Overview of Record TIME 
             </v-btn>
           </v-col>
 
@@ -97,10 +97,52 @@
       <p>suitable across all industries</p>
 
       <h3><span>Organisations</span> That Rely on Record TIME:</h3>
+      <!-- <v-carousel cycle height="400" hide-delimiter-background show-arrows-on-hover > 
+        <template v-for="(item, index) in organisationsLogo"> 
+          <v-carousel-item v-if="(index + 1) % columns === 1 || columns === 1" :key="index"> 
+            <v-row class="flex-nowrap" style="height:100%"> 
+              <template v-for="(n,i) in columns"> 
+                <template v-if="(+index + i) < organisationsLogo.length"> 
+                  <v-col :key="i"> 
+                    <v-sheet v-if="(+index + i) < organisationsLogo.length" :color="organisationsLogo[+index + i]" height="100%" >
+                      <v-row class="fill-height" align="center" justify="center" >
+                        <img :src="require('@/assets/Home/Testimonials/' + item)" style="object-fit: contain;">
+                      </v-row>
+                    </v-sheet>
+                  </v-col> 
+                </template> 
+              </template> 
+            </v-row> 
+          </v-carousel-item> 
+        </template> 
+      </v-carousel>  -->
 
-      <div class="organisations-row">
+      <vueper-slides :arrows="false"
+      class="no-shadow"
+      :visible-slides="4"
+      slide-multiple
+      :gap="4"
+      :slide-ratio="1 / 4"
+      :dragging-distance="200"
+      :breakpoints="{ 200: { visibleSlides: 2, slideMultiple: 2 } }" style="height: 100px;">
+      <vueper-slide v-for="(item,i) in organisationsLogo" :key="i" :image="require('@/assets/Home/Testimonials/' + item)" style="height: 100px;background-size: contain;" />
+    </vueper-slides>
+
+      <!-- <v-carousel cycle height="100" hide-delimiter-background show-arrows-on-hover>
+        <v-carousel-item v-for="(slide, i) in organisationsLogo" :key="i" >
+          <v-sheet height="100%" >
+            <v-row class="fill-height" align="center" justify="center" >
+              <div class="text-h2">
+                <img :src="require('@/assets/Home/Testimonials/'+ slide) " style="object-fit: contain;">
+              </div>
+            </v-row>
+          </v-sheet>
+        </v-carousel-item>
+      </v-carousel> -->
+
+      <!-- <div class="organisations-row">
         <img :src="require('@/assets/Home/Testimonials/' + logo)" v-for="(logo, index) in organisationsLogo" :key="index" style="object-fit: contain;">
-      </div>
+      </div> -->
     </v-container>
 
     <video-modal v-if="showModal" @showModal="transitionend" :url="url"/>
@@ -508,6 +550,8 @@ import VideoModal from '@/components/VideoModal.vue';
 import {mdiHeart} from '@mdi/js';
 import {mdiPlay} from '@mdi/js';
 import {mdiArrowDown} from '@mdi/js';
+import { VueperSlides, VueperSlide } from 'vueperslides'
+import 'vueperslides/dist/vueperslides.css'
 
 export default {
   metaInfo: {
@@ -519,7 +563,7 @@ export default {
     ]
   },
   components: {
-    LandingBanner, VideoModal
+    LandingBanner, VideoModal,VueperSlides, VueperSlide
   },
   data() {
     return {
@@ -530,50 +574,32 @@ export default {
         {
           'imgPath': '',
           'title': 'Digital Dockets and Forms',
-          'description': 'Record Time allows you to easily create docket templates. ' +
-              'You can design your docket to look and work exactly the way you want it. ' +
-              'It is straightforward to use and can replace your business processes. ' +
-              'The difficulties with getting dockets signed and storing them are a thing of the past.'
+          'description': 'Record Time allows you to easily create docket templates. You can design your dockets and forms to look and work exactly the way you want it. It is straightforward to use and can replace your business processes.'
         },
         {
           'imgPath': '',
           'title': 'Job Scheduler',
-          'description': 'Record Time allows you to easily create docket templates. ' +
-              'You can design your docket to look and work exactly the way you want it. ' +
-              'It is straightforward to use and can replace your business processes. ' +
-              'The difficulties with getting dockets signed and storing them are a thing of the past.'
+          'description': 'The scheduler allows you to assign jobs to your staff. Here you can add job details, comments, location of the job and assign forms and dockets that need to be filled as part of the job. You can also allocate plant and view resource utilisation.'
         },
         {
           'imgPath': '',
           'title': 'Plant Management',
-          'description': 'Record Time allows you to easily create docket templates. ' +
-              'You can design your docket to look and work exactly the way you want it. ' +
-              'It is straightforward to use and can replace your business processes. ' +
-              'The difficulties with getting dockets signed and storing them are a thing of the past.'
+          'description': 'You can add all your plant using our plant manager. You can also tag out plants that are not currently in use or are in repair. Further, use our scheduler to assign plants to particular jobs. You can also set registration expiry reminders with our system.'
         },
         {
           'imgPath': '',
           'title': 'Invoicing',
-          'description': 'Record Time allows you to easily create docket templates. ' +
-              'You can design your docket to look and work exactly the way you want it. ' +
-              'It is straightforward to use and can replace your business processes. ' +
-              'The difficulties with getting dockets signed and storing them are a thing of the past.'
+          'description': 'With Record TIME, you can easily design invoice templates. Personalise your invoices by adding photographs and signatures. Use our App to easily create and send invoices on the fly. Never worry about invoicing again.'
         },
         {
           'imgPath': '',
           'title': 'Bundy Clock/Timer',
-          'description': 'Record Time allows you to easily create docket templates. ' +
-              'You can design your docket to look and work exactly the way you want it. ' +
-              'It is straightforward to use and can replace your business processes. ' +
-              'The difficulties with getting dockets signed and storing them are a thing of the past.'
+          'description': 'Our Timer allows your staff to sign in to a location and start a job timer. You can easily see where your staff are on a map and whether they have clocked. You can generate time reports and use this as a more advanced timesheet!'
         },
         {
           'imgPath': '',
           'title': 'Export Mapper',
-          'description': 'Record Time allows you to easily create docket templates. ' +
-              'You can design your docket to look and work exactly the way you want it. ' +
-              'It is straightforward to use and can replace your business processes. ' +
-              'The difficulties with getting dockets signed and storing them are a thing of the past.'
+          'description': 'We understand that you use other platforms to run your business. The export mapper is a simple and efficient way to generate csv data out of your forms. You can specify which fields and how your exported data should look like and import them into other platforms.'
         }
       ],
       organisationsLogo: [
@@ -584,6 +610,23 @@ export default {
       ],
       showModal: false,
       url: ""
+    }
+  },
+  computed: {
+    columns() {
+      if (this.$vuetify.breakpoint.xl) {
+        return 4;
+      }
+
+      if (this.$vuetify.breakpoint.lg) {
+        return 3;
+      }
+
+      if (this.$vuetify.breakpoint.md) {
+        return 2;
+      }
+
+      return 1;
     }
   },
   methods: {
@@ -604,6 +647,9 @@ export default {
             offset: 0
           }
       );
+    },
+    watchLink(){
+      window.open('https://www.youtube.com/watch?v=oNZhKfyQbr8&t=1291s&ab_channel=RecordTime', '_blank');
     }
   }
 }

@@ -209,7 +209,7 @@ export default {
         },
         {
           title: "Where is Record Time based?",
-          desc: "Our head office is in Canberra. However, we have staff in Queensland, Sydney"
+          desc: "Our head office is in Canberra. However, we support and have customers all over Australia."
         },
         {
           title: "Do you help us set up our account if needed?",

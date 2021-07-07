@@ -6,11 +6,11 @@
         <img src="../assets/Footer/shape-2.svg" class="shape-2">
         <img src="../assets/Footer/shape-3.svg" class="shape-3">
 
-        <p class="text-uppercase">check our mobile app interaction</p>
-        <h2>Download Record Time App Now</h2>
+        <p class="text-uppercase">CHECK OUT OUR MOBILE APPS</p>
+        <h2>Download the Record Time App Today:</h2>
 
         <div class="store-logo-container">
-          <a class="google" @click="goToGoogleAppStore">
+          <a class="google" @click="goToAppleAppStore">
             <img src="../assets/Footer/apple_logo.png" alt="Apple Store Logo">
             <div class="text-wrapper">
               <p>Download on the</p>
@@ -18,7 +18,7 @@
             </div>
           </a>
 
-          <a class="apple" @click="goToAppleAppStore">
+          <a class="apple" @click="goToGoogleAppStore">
             <img src="../assets/Footer/google_play_logo.png" alt="Google Play Store Logo">
             <div class="text-wrapper">
               <p>Get it on</p>
@@ -31,7 +31,7 @@
           <img src="../assets/Footer/how-it-works.png" alt="Record time docketing system">
 
           <div class="btn-container">
-            <p>How it works?</p>
+            <p>What is Record TIME?</p>
 
             <div class="play-btn-container">
               <img src="../assets/Footer/btn-blur.svg" alt="Background blur">
@@ -77,9 +77,9 @@
 
           <ul class="mt-6">
             <li @click="$router.push({ name: 'contact'})">Contact Us</li>
-            <li>Terms of Use</li>
-            <li>License Agreement</li>
-            <li>How To's</li>
+            <li @click="link('https://recordtime.com.au/terms-of-use')">Terms of Use</li>
+            <li @click="link('https://recordtime.com.au/license-agreement')">License Agreement</li>
+            <li @click="link('https://help.recordtime.com.au/hc/en-us/categories/360000153516-How-to-use-the-website')">How To's</li>
           </ul>
         </v-col>
 
@@ -118,8 +118,8 @@
               </v-expansion-panel-header>
               <v-expansion-panel-content>
                 <ul>
-                  <li>About Us</li>
-                  <li>FAQ</li>
+                  <li @click="$router.push({ name: 'about'})">About Us</li>
+                  <li @click="$router.push({ name: 'faq'})">FAQ</li>
                   <li>Our Blogs</li>
                 </ul>
               </v-expansion-panel-content>
@@ -131,11 +131,10 @@
               </v-expansion-panel-header>
               <v-expansion-panel-content>
                 <ul>
-                  <li>FAQs</li>
-                  <li>Contact Us</li>
-                  <li>Terms of Use</li>
-                  <li>License Agreement</li>
-                  <li>How To's</li>
+                  <li @click="$router.push({ name: 'contact'})">Contact Us</li>
+                  <li @click="link('https://recordtime.com.au/terms-of-use')">Terms of Use</li>
+                  <li @click="link('https://recordtime.com.au/license-agreement')">License Agreement</li>
+                  <li @click="link('https://help.recordtime.com.au/hc/en-us/categories/360000153516-How-to-use-the-website')">How To's</li>
                 </ul>
               </v-expansion-panel-content>
             </v-expansion-panel>
@@ -558,13 +557,16 @@ export default {
   },
   methods: {
     goToGoogleAppStore() {
-      window.open('', '_blank');
+      window.open('https://play.google.com/store/apps/details?id=com.webtecsolutions.recordtimeapp', '_blank');
     },
     goToAppleAppStore() {
-      window.open('', '_blank');
+      window.open('https://itunes.apple.com/au/app/record-time/id971035780', '_blank');
     },
     transitionend() {
       this.showModal = false;
+    },
+    link(link){
+      window.open(link, '_blank');
     }
   }
 }

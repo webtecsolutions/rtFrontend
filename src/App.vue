@@ -26,7 +26,7 @@
 
           <v-spacer></v-spacer>
 
-          <a class="sign-in-link mr-8 hidden-xs-only">
+          <a @click="signIn()" class="sign-in-link mr-8 hidden-xs-only">
             Sign In
           </a>
           <primary-btn @click="$router.push(
@@ -130,6 +130,9 @@
     methods: {
       transitionend() {
         this.showDrawer = false;
+      },
+      signIn(){
+        window.open('https://www.recordtimeapp.com.au/backend/login', '_blank');
       }
     }
   }

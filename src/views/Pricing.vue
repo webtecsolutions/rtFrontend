@@ -7,11 +7,11 @@
 
       <template v-slot:subTitle>
        From as little as a 1$ a day.
-        Please sign up  here to view custom plans to suit your needs.
+        Please sign up  <a href="https://www.recordtimeapp.com.au/backend/registration" target="_blank">here</a> to view custom plans to suit your needs.
       </template>
 
       <template v-slot:image>
-        <img :src="require('../assets/pricing.jpg')" alt="Home banner image">
+        <img :src="require('../assets/pricing.jpg')" alt="Home banner image" style="height: 300px;object-fit: contain;width: 350px;transform: none;">
       </template>
 
       <!-- <template v-slot:main>

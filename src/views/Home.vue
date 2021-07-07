@@ -90,7 +90,7 @@
 
           <div class="email-input-container">
             <v-text-field filled background-color="white" clearable flat full-width height="55" solo/>
-            <v-btn height="56" class="get-demo-btn" tile color="primary">
+            <v-btn height="56" class="get-demo-btn" tile color="primary" @click="getDemo()">
               Get Demo Now
             </v-btn>
           </div>
@@ -687,12 +687,16 @@ export default {
       return results;
     },
     firstBtnClicked() {
+      window.open('https://www.recordtimeapp.com.au/backend/registration', '_blank');
     },
     secondBtnClicked() {
       this.showModal = true;
     },
     transitionend() {
       this.showModal = false;
+    },
+    getDemo(){
+      window.open('mailto:info@recordtime.com.au?subject=New Demo Request&body=body');
     }
   }
 }

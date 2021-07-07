@@ -17,12 +17,12 @@
         <secondary-btn-row @firstBtnClicked="firstBtnClicked" @secondBtnClicked="secondBtnClicked"/>
 
         <p class="customers-container-prefix">
-          +1.000 people around the world using Record Time app
+          Record TIME was born out of the civil industry.
         </p>
         <div class="customers-container" :style="{ 'width': landingBannerContainerWidth + 'px' }">
           <img v-for="(path, index) in clientLogoPaths"
                :src="require('../assets/About/' + path)"
-               :key="index" :alt="'Customer logo ' + index">
+               :key="index" :alt="'Customer logo ' + index" style="height:15rem;object-fit: contain;">
         </div>
       </template>
     </landing-banner>
@@ -362,8 +362,8 @@ export default {
         '2.jpg',
         '3.jpg',
         '4.jpg',
-        '5.jpg',
-        '6.jpg'
+        // '5.jpg',
+        // '6.jpg'
       ],
       landingBannerContainerWidth: 0,
       bannerImage: bannerImage,
@@ -393,6 +393,7 @@ export default {
   },
   methods: {
     firstBtnClicked() {
+      window.open('https://www.recordtimeapp.com.au/backend/registration', '_blank');
     },
     secondBtnClicked() {
       this.showModal = true;
