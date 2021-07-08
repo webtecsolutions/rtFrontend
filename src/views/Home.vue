@@ -54,11 +54,11 @@
               See all features
             </a>
           </div>
-          <img src="../assets/Home/ipad.png">
+          <img src="../assets/Home/schedule-staff.png">
         </div>
 
         <div class="features-row">
-          <img src="../assets/Home/laptop-docket2.png">
+          <img src="../assets/Home/iPhoneXr_Mockup.png">
           <div class="text-section">
             <p>3. Designed for Safety</p>
             <h3>Safety  & Compliance.</h3>
@@ -88,11 +88,13 @@
           <h2>Get a Demo and Try Record Time Today!</h2>
           <p>Enter your email below and we will contact you for a demo</p>
 
-          <div class="email-input-container">
-            <v-text-field filled background-color="white" clearable flat full-width height="55" solo/>
+          <div class="email-input-container" style="position: relative;">
+            <v-text-field filled background-color="white" v-model="demoEmail" clearable flat full-width height="55" solo/>
             <v-btn height="56" class="get-demo-btn" tile color="primary" @click="getDemo()">
               Get Demo Now
             </v-btn>
+            <span style="color:red;position: absolute;top:60px" v-html="demoEmailError"></span>
+            <span style="color:green;position: absolute;top:60px" v-html="demoEmailSuccess"></span>
           </div>
         </div>
       </v-container>
@@ -615,6 +617,7 @@ import SecondaryBtnRow from '@/components/SecondaryBtnRow1.vue';
 import VideoModal from '@/components/VideoModal.vue';
 import {mdiArrowLeft} from '@mdi/js';
 import {mdiArrowRight} from '@mdi/js';
+import axios from 'axios';
 
 export default {
   metaInfo: {
@@ -660,7 +663,10 @@ export default {
         'logo-light.jpg',
         'logo-light.jpg'
       ],
-      showModal: false
+      showModal: false,
+      demoEmail: '',
+      demoEmailError: '',
+      demoEmailSuccess: ''
     }
   },
   computed: {
@@ -696,7 +702,32 @@ export default {
       this.showModal = false;
     },
     getDemo(){
-      window.open('mailto:info@recordtime.com.au?subject=New Demo Request&body=body');
+      this.demoEmailError = '';
+      this.demoEmailSuccess = '';
+      if(!this.demoEmail){
+        this.demoEmailError = "Enter your email address first.";
+        return;
+      }
+
+      let formData = new FormData();
+
+      formData.append('email', this.demoEmail);
+      formData.append('subject', 'New Demo Request.');
+      formData.append('message',  this.demoEmail + ' has requested a demo.');
+      formData.append('to', 'info@recordtime.com.au');
+      formData.append('for', 'demo');
+            
+      axios.post('https://recordtimeapp.com.au/backend/api/rt-frontend/send/mail',formData).then((res) => {
+        if(res.data.status){
+          this.demoEmailSuccess = res.data.message;
+          this.demoEmail = '';
+        }else{
+          this.demoEmailError = res.data.message;
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      })
     }
   }
 }

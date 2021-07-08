@@ -40,6 +40,8 @@
                  :disabled="!valid" @click="validate">
             Submit Request
           </v-btn>
+           <span style="color:red;padding-left: 20px;" v-html="demoEmailError"></span>
+            <span style="color:green;padding-left: 20px;" v-html="demoEmailSuccess"></span>
         </v-form>
       </template>
     </landing-banner>
@@ -179,6 +181,7 @@
 <script>
 // @ is an alias to /src
 import LandingBanner from '@/components/LandingBanner.vue';
+import axios from 'axios';
 
 export default {
   metaInfo: {
@@ -210,11 +213,37 @@ export default {
       messageRules: [
         v => !!v || 'Enquiry is required'
       ],
+      demoEmailError: '',
+      demoEmailSuccess: ''
     }
   },
   methods: {
     validate() {
-      console.log(this.$refs.form.validate());
+      this.demoEmailError = '';
+      this.demoEmailSuccess = '';
+      if(this.$refs.form.validate()){
+        let formData = new FormData();
+
+        formData.append('email', this.email);
+        formData.append('name', this.name);
+        formData.append('subject', 'Contact us');
+        formData.append('contact_no', this.contactNo);
+        formData.append('message',  this.message);
+        formData.append('to', 'info@recordtime.com.au');
+        formData.append('for', 'contact');
+              
+        axios.post('https://recordtimeapp.com.au/backend/api/rt-frontend/send/mail',formData).then((res) => {
+          if(res.data.status){
+            this.demoEmailSuccess = res.data.message;
+            this.demoEmail = '';
+          }else{
+            this.demoEmailError = res.data.message;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+      }
 
       // Reset form & reset form validation
       // this.$refs.form.reset();
