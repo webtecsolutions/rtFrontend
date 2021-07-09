@@ -18,7 +18,7 @@
 
         <div class="client-logo-container">
           <img v-for="(path, index) in clientLogoPaths" :src="require('../assets/' + path)"
-               :key="index" :alt="'Client logo ' + index">
+               :key="index" :alt="'Client logo ' + index" style="width: 8.625rem;height: 3.875rem;object-fit: cover;float: left;">
         </div>
       </template>
     </landing-banner>
@@ -30,7 +30,7 @@
         <h2>Core Features of Record Time</h2>
 
         <div class="features-row">
-          <img src="../assets/Home/laptop-docket.png">
+          <img src="../assets/Home/laptop-docket.png" style="height: 20.875rem;object-fit: contain;">
           <div class="text-section">
             <p>1. Easy Templates</p>
             <h3>Modular Dockets and Forms</h3>
@@ -54,11 +54,11 @@
               See all features
             </a>
           </div>
-          <img src="../assets/Home/schedule-staff.png">
+          <img src="../assets/Home/schedule-staff.png" style="height: 20.875rem;object-fit: contain;">
         </div>
 
         <div class="features-row">
-          <img src="../assets/Home/iPhoneXr_Mockup.png">
+          <img src="../assets/Home/iPhoneXr_Mockup.png" style="height: 20.875rem;object-fit: contain;">
           <div class="text-section">
             <p>3. Designed for Safety</p>
             <h3>Safety  & Compliance.</h3>
@@ -106,7 +106,7 @@
       <h2>Success Stories</h2>
 
       <v-window v-model="testimonialWindow" vertical show-arrows :prev-icon="mdiArrowLeft" :next-icon="mdiArrowRight">
-        <v-window-item v-for="(chunkedTestimonial, index1) in computedTestimonials" :key="index1">
+        <v-window-item v-for="(chunkedTestimonial, index1) in computedTestimonials" :key="index1" style="min-height: 500px;">
           <v-row no-gutters>
             <v-col :cols="12/(chunkedTestimonial.length)" v-for="(testimonial, index2) in chunkedTestimonial"
                    :key="index2">
@@ -657,11 +657,10 @@ export default {
         }
       ],
       clientLogoPaths: [
-        'logo-light.jpg',
-        'logo-light.jpg',
-        'logo-light.jpg',
-        'logo-light.jpg',
-        'logo-light.jpg'
+        'Digital-form-solution-QR-Code-ready.png',
+        'Digital-form-solution-Signature-ready.png',
+        'Digital-form-solution-Compliant-ready.png',
+        'Digital-form-solution-Proof-of-work-ready.png'
       ],
       showModal: false,
       demoEmail: '',

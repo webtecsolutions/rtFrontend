@@ -72,7 +72,9 @@
         <v-row no-gutters class="feature-list-container">
           <v-col :sm="$vuetify.breakpoint.xsOnly ? 12 : 6" cols="12">
             <div class="feature-item" v-for="(featureItem, index) in featureItems" :key="index">
-              <v-avatar size="74" color="primary"></v-avatar>
+              <v-avatar size="74" color="primary">
+                <img :src="require('../assets/Features/' + featureItem.imgPath)" style="width:65%;height:65%;border-radius: unset;">
+              </v-avatar>
               <div class="feature-item-content">
                 <h3 class="feature-item-content__title">{{ featureItem.title }}</h3>
                 <p class="feature-item-content__desc">{{ featureItem.description }}</p>
@@ -85,9 +87,9 @@
           </v-col>
 
           <v-col :sm="$vuetify.breakpoint.xsOnly ? 12 : 6" cols="12" class="feature-img-container">
-            <img src="https://via.placeholder.com/400x400" class="img-1">
-            <img src="https://via.placeholder.com/400x400" class="img-2">
-            <img src="https://via.placeholder.com/400x400" class="img-3">
+            <img :src="require('../assets/Features/docketing.png')" class="img-1">
+            <img :src="require('../assets/Features/scheduler.jpg')" class="img-2">
+            <img :src="require('../assets/Features/exportMapperImage.png')" class="img-3">
           </v-col>
         </v-row>
       </v-container>
@@ -97,25 +99,6 @@
       <p>suitable across all industries</p>
 
       <h3><span>Organisations</span> That Rely on Record TIME:</h3>
-      <!-- <v-carousel cycle height="400" hide-delimiter-background show-arrows-on-hover > 
-        <template v-for="(item, index) in organisationsLogo"> 
-          <v-carousel-item v-if="(index + 1) % columns === 1 || columns === 1" :key="index"> 
-            <v-row class="flex-nowrap" style="height:100%"> 
-              <template v-for="(n,i) in columns"> 
-                <template v-if="(+index + i) < organisationsLogo.length"> 
-                  <v-col :key="i"> 
-                    <v-sheet v-if="(+index + i) < organisationsLogo.length" :color="organisationsLogo[+index + i]" height="100%" >
-                      <v-row class="fill-height" align="center" justify="center" >
-                        <img :src="require('@/assets/Home/Testimonials/' + item)" style="object-fit: contain;">
-                      </v-row>
-                    </v-sheet>
-                  </v-col> 
-                </template> 
-              </template> 
-            </v-row> 
-          </v-carousel-item> 
-        </template> 
-      </v-carousel>  -->
 
       <vueper-slides :arrows="false"
       class="no-shadow"
@@ -127,22 +110,6 @@
       :breakpoints="{ 200: { visibleSlides: 2, slideMultiple: 2 } }" style="height: 100px;">
       <vueper-slide v-for="(item,i) in organisationsLogo" :key="i" :image="require('@/assets/Home/Testimonials/' + item)" style="height: 100px;background-size: contain;" />
     </vueper-slides>
-
-      <!-- <v-carousel cycle height="100" hide-delimiter-background show-arrows-on-hover>
-        <v-carousel-item v-for="(slide, i) in organisationsLogo" :key="i" >
-          <v-sheet height="100%" >
-            <v-row class="fill-height" align="center" justify="center" >
-              <div class="text-h2">
-                <img :src="require('@/assets/Home/Testimonials/'+ slide) " style="object-fit: contain;">
-              </div>
-            </v-row>
-          </v-sheet>
-        </v-carousel-item>
-      </v-carousel> -->
-
-      <!-- <div class="organisations-row">
-        <img :src="require('@/assets/Home/Testimonials/' + logo)" v-for="(logo, index) in organisationsLogo" :key="index" style="object-fit: contain;">
-      </div> -->
     </v-container>
 
     <video-modal v-if="showModal" @showModal="transitionend" :url="url"/>
@@ -572,32 +539,32 @@ export default {
       mdiArrowDown: mdiArrowDown,
       featureItems: [
         {
-          'imgPath': '',
+          'imgPath': 'icon/dockets.png',
           'title': 'Digital Dockets and Forms',
           'description': 'Record Time allows you to easily create docket templates. You can design your dockets and forms to look and work exactly the way you want it. It is straightforward to use and can replace your business processes.'
         },
         {
-          'imgPath': '',
+          'imgPath': 'icon/job-scheduler.png',
           'title': 'Job Scheduler',
           'description': 'The scheduler allows you to assign jobs to your staff. Here you can add job details, comments, location of the job and assign forms and dockets that need to be filled as part of the job. You can also allocate plant and view resource utilisation.'
         },
         {
-          'imgPath': '',
+          'imgPath': 'icon/plant-manaagement.png',
           'title': 'Plant Management',
           'description': 'You can add all your plant using our plant manager. You can also tag out plants that are not currently in use or are in repair. Further, use our scheduler to assign plants to particular jobs. You can also set registration expiry reminders with our system.'
         },
         {
-          'imgPath': '',
+          'imgPath': 'icon/invoicing.png',
           'title': 'Invoicing',
           'description': 'With Record TIME, you can easily design invoice templates. Personalise your invoices by adding photographs and signatures. Use our App to easily create and send invoices on the fly. Never worry about invoicing again.'
         },
         {
-          'imgPath': '',
+          'imgPath': 'icon/bundy-clock.png',
           'title': 'Bundy Clock/Timer',
           'description': 'Our Timer allows your staff to sign in to a location and start a job timer. You can easily see where your staff are on a map and whether they have clocked. You can generate time reports and use this as a more advanced timesheet!'
         },
         {
-          'imgPath': '',
+          'imgPath': 'icon/export-maping.png',
           'title': 'Export Mapper',
           'description': 'We understand that you use other platforms to run your business. The export mapper is a simple and efficient way to generate csv data out of your forms. You can specify which fields and how your exported data should look like and import them into other platforms.'
         }

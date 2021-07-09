@@ -92,17 +92,17 @@
 
           <div class="mt-10">
             <v-hover v-slot:default="{ hover }">
-              <v-avatar size="40">
+              <v-avatar size="40" @click="link('https://www.facebook.com/recordtimeapp')">
                 <v-icon :color="hover ? '#00c8d8' : '#8298a8'" size="30">{{ mdiFacebook }}</v-icon>
               </v-avatar>
             </v-hover>
             <v-hover v-slot:default="{ hover }">
-              <v-avatar size="40" class="mx-4">
-                <v-icon :color="hover ? '#00c8d8' : '#8298a8'" size="30">{{ mdiGoogle }}</v-icon>
+              <v-avatar size="40" class="mx-4" @click="link('https://www.instagram.com/recordtimeapp')">
+                <v-icon :color="hover ? '#00c8d8' : '#8298a8'" size="30">{{ mdiInstagram }}</v-icon>
               </v-avatar>
             </v-hover>
             <v-hover v-slot:default="{ hover }">
-              <v-avatar size="40">
+              <v-avatar size="40" @click="link('https://twitter.com/recordtimeappau')">
                 <v-icon :color="hover ? '#00c8d8' : '#8298a8'" size="30">{{ mdiTwitter }}</v-icon>
               </v-avatar>
             </v-hover>
@@ -149,13 +149,13 @@
                 </p>
 
                 <div :class="$vuetify.breakpoint.smAndDown ? 'text-center' : 'mt-10'">
-                  <v-avatar size="40">
+                  <v-avatar size="40" @click="link('https://www.facebook.com/recordtimeapp')">
                     <v-icon color="#8298a8" size="30">{{ mdiFacebook }}</v-icon>
                   </v-avatar>
-                  <v-avatar size="40" class="mx-4">
-                    <v-icon color="#8298a8" size="30">{{ mdiGoogle }}</v-icon>
+                  <v-avatar size="40" class="mx-4" @click="link('https://www.instagram.com/recordtimeapp')">
+                    <v-icon color="#8298a8" size="30">{{ mdiInstagram }}</v-icon>
                   </v-avatar>
-                  <v-avatar size="40">
+                  <v-avatar size="40" @click="link('https://twitter.com/recordtimeappau')">
                     <v-icon color="#8298a8" size="30">{{ mdiTwitter }}</v-icon>
                   </v-avatar>
                 </div>
@@ -533,11 +533,7 @@
 
 <script>
 // @ is an alias to /src
-import {mdiFacebook} from '@mdi/js';
-import {mdiGoogle} from '@mdi/js';
-import {mdiTwitter} from '@mdi/js';
-import {mdiPlus} from '@mdi/js';
-import {mdiPlay} from '@mdi/js';
+import {mdiFacebook , mdiGoogle, mdiInstagram, mdiTwitter, mdiPlus, mdiPlay} from '@mdi/js';
 import VideoModal from '@/components/VideoModal.vue';
 
 
@@ -548,10 +544,11 @@ export default {
   data() {
     return {
       mdiFacebook: mdiFacebook,
-      mdiGoogle: mdiGoogle,
+      mdiInstagram: mdiInstagram,
       mdiTwitter: mdiTwitter,
       mdiPlus: mdiPlus,
       mdiPlay: mdiPlay,
+      mdiGoogle: mdiGoogle,
       showModal: false
     }
   },
