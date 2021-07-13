@@ -1,8 +1,8 @@
 <template>
   <div>
-    <v-container class="faq-notice-container">
+    <v-container class="faq-notice-container" style="display: block;">
         <br><br>
-        <img :src="require('../assets/About/banner.png')" alt="Home banner image" style="width:70%">
+        <img :src="require('../assets/blog.jpg')" alt="Home banner image" style="width:70%">
         <h1>How can Record TIME help an Owner Operator?</h1>
         <p>
             If you own a business and operate machinery such as an Backhoes, Excavators or Skid-Steers, Forklifts or drive a truck, then using Record TIME 

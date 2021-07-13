@@ -2,7 +2,7 @@
   <div>
     <landing-banner>
       <template v-slot:title>
-        All Your <span>Forms & Dockets</span> on your smartphone
+        All your <span>forms & dockets</span> on your smartphone
       </template>
 
       <template v-slot:subTitle>

@@ -35,7 +35,7 @@
       <!-- App bar -->
 
       <!-- Router content -->
-      <v-main>
+      <v-main style="min-height: 50%;">
         <router-view/>
       </v-main>
       <!-- Router content -->

@@ -2,7 +2,7 @@
   <div>
     <landing-banner>
       <template v-slot:title>
-        Flexible <span>Pricing</span> To suit your needs
+        Flexible <span>pricing</span> to suit your needs
       </template>
 
       <template v-slot:subTitle>

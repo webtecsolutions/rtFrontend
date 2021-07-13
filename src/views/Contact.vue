@@ -2,7 +2,7 @@
   <div>
     <landing-banner>
       <template v-slot:title>
-        Got a Question? <br> <span @click="$router.push({ name: 'contact'})">Contact Us</span>
+        Got a question? <br> <span @click="$router.push({ name: 'contact'})">contact us</span>
       </template>
 
       <template v-slot:subTitle>
@@ -18,13 +18,13 @@
         <v-form ref="form" v-model="valid" class="contact-form">
           <v-row no-gutters class="form-row">
             <v-col md="6" class="left-col">
-              <v-text-field v-model="name" label="Name" :rules="nameRules" outlined required/>
+              <v-text-field v-model="name" label="Name" outlined required/>
             </v-col>
           </v-row>
 
           <v-row no-gutters class="form-row">
             <v-col :md="$vuetify.breakpoint.xsOnly ? 12 : 6" cols="12" class="left-col">
-              <v-text-field v-model="email" label="Email" :rules="emailRules" outlined required/>
+              <v-text-field v-model="email" label="Email" outlined required/>
             </v-col>
 
             <v-col :md="$vuetify.breakpoint.xsOnly ? 12 : 6" cols="12" class="right-col">
@@ -33,12 +33,11 @@
           </v-row>
 
           <v-row no-gutters class="form-row">
-            <v-textarea v-model="message" label="Enquiry" :rules="messageRules" outlined required/>
+            <v-textarea v-model="message" label="Enquiry" outlined required/>
           </v-row>
-          <vue-recaptcha sitekey="6LfBKJEbAAAAAIN-jSbhyCz63gp8AmoSvX8HwwnA" :loadRecaptchaScript="true">
-          </vue-recaptcha>
-          <vue-recaptcha sitekey="6LfBKJEbAAAAAMx4G9IGp2W_KNWVQ8wcWy2XbpR8" :loadRecaptchaScript="true">
-          </vue-recaptcha>
+          <vue-recaptcha :sitekey="siteKeyVariable" :loadRecaptchaScript="true" @verify="markRecaptchaAsVerified"></vue-recaptcha>
+          <span style="color:red;" v-html="pleaseTickRecaptchaMessage"></span>
+          <br>
           <v-btn elevation="0" color="secondary" width="200" height="42" :block="$vuetify.breakpoint.xsOnly"
                  :disabled="!valid" @click="validate">
             Submit Request
@@ -218,11 +217,26 @@ export default {
         v => !!v || 'Enquiry is required'
       ],
       demoEmailError: '',
-      demoEmailSuccess: ''
+      demoEmailSuccess: '',
+      recaptchaVerified: false,
+      pleaseTickRecaptchaMessage: ''
+    }
+  },
+  computed:{
+      siteKeyVariable(){
+          return process.env.VUE_APP_CAPTCHA_SITE_KEY
     }
   },
   methods: {
+    markRecaptchaAsVerified(response) {
+      this.pleaseTickRecaptchaMessage = '';
+      this.recaptchaVerified = true;
+    },
     validate() {
+      if (!this.recaptchaVerified) {
+        this.pleaseTickRecaptchaMessage = 'Please tick recaptcha.';
+        return true;
+      }
       this.demoEmailError = '';
       this.demoEmailSuccess = '';
       if(this.$refs.form.validate()){
@@ -233,7 +247,7 @@ export default {
         formData.append('subject', 'Contact us');
         formData.append('contact_no', this.contactNo);
         formData.append('message',  this.message);
-        formData.append('to', 'thebasswe5@gmail.com');
+        formData.append('to', 'info@recordtimeapp.com.au');
               
         axios.post('https://recordtimeapp.com.au/backend/api/rt-frontend/send/mail',formData).then((res) => {
           if(res.data.status){
@@ -242,6 +256,7 @@ export default {
             this.name = '';
             this.contactNo = '';
             this.message = '';
+            VueRecaptcha.reset();
           }else{
             this.demoEmailError = res.data.message;
           }

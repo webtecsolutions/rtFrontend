@@ -2,7 +2,7 @@
   <div>
     <landing-banner>
       <template v-slot:title>
-        Record Time Frequently Asked <span>Questions</span>
+        Record Time frequently Asked <span>questions</span>
       </template>
 
       <template v-slot:subTitle>

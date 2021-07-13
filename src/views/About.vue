@@ -2,7 +2,7 @@
   <div>
     <landing-banner>
       <template v-slot:title>
-        Developed For the <span>Construction Industry</span>
+        Developed for the <span>construction industry</span>
       </template>
 
       <template v-slot:subTitle>
