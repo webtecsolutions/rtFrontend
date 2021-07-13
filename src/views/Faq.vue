@@ -44,7 +44,7 @@
         <p class="faq-content__title">Still need help? Send us an email!</p>
         <p class="faq-content__desc">
           For more Questions, how-tos and other documentation please
-          <a href="https://help.recordtime.com.au/hc/en-us/categories/360000153335-General"> click here</a>
+          <a href="https://help.recordtime.com.au/hc/en-us/categories/360000153335-General"> click here </a>
           <a href = "mailto:info@recordtime.com.au">info@recordtime.com.au</a> or
           <a href="tel:0421955630">0421 955 630</a>
         </p>

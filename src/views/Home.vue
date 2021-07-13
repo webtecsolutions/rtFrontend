@@ -2,7 +2,7 @@
   <div>
     <landing-banner>
       <template v-slot:title>
-        All Your <span>Forms & Dockets</span> in your smartphone
+        All Your <span>Forms & Dockets</span> on your smartphone
       </template>
 
       <template v-slot:subTitle>
@@ -18,7 +18,7 @@
 
         <div class="client-logo-container">
           <img v-for="(path, index) in clientLogoPaths" :src="require('../assets/' + path)"
-               :key="index" :alt="'Client logo ' + index" style="width: 8.625rem;height: 3.875rem;object-fit: cover;float: left;">
+               :key="index" :alt="'Client logo ' + index" style="width: 9.1rem;height: 3.875rem;float: left;">
         </div>
       </template>
     </landing-banner>
@@ -74,11 +74,11 @@
     </div>
 
     <div class="demo-section">
-      <div class="shape-layer">
+      <!-- <div class="shape-layer">
         <img src="../assets/Home/demo-shape1.svg" alt="Shape 1">
         <img src="../assets/Home/demo-shape2.svg" alt="Shape 2">
         <img src="../assets/Home/demo-shape3.svg" alt="Shape 3">
-      </div>
+      </div> -->
       <v-container>
         <div class="iphone-container">
           <img src="../assets/Home/iphone.png" alt="Get record time demo"/>
@@ -130,6 +130,7 @@
     </v-container>
 
     <video-modal v-if="showModal" @showModal="transitionend" url="https://www.youtube.com/embed/62kV7CIU_F4"/>
+    <get-demo-modal v-if="getDemoModal" :demoEmail="demoEmail" @getDemoModalClose="getDemoModalClose" @demoResponse="demoResponse" url="https://www.youtube.com/embed/62kV7CIU_F4"/>
   </div>
 </template>
 
@@ -615,6 +616,7 @@
 import LandingBanner from '@/components/LandingBanner.vue';
 import SecondaryBtnRow from '@/components/SecondaryBtnRow1.vue';
 import VideoModal from '@/components/VideoModal.vue';
+import GetDemoModal from '@/components/GetDemoModal.vue';
 import {mdiArrowLeft} from '@mdi/js';
 import {mdiArrowRight} from '@mdi/js';
 import axios from 'axios';
@@ -629,7 +631,7 @@ export default {
     ]
   },
   components: {
-    LandingBanner, SecondaryBtnRow, VideoModal
+    LandingBanner, SecondaryBtnRow, VideoModal,GetDemoModal
   },
   data() {
     return {
@@ -663,6 +665,7 @@ export default {
         'Digital-form-solution-Proof-of-work-ready.png'
       ],
       showModal: false,
+      getDemoModal: false,
       demoEmail: '',
       demoEmailError: '',
       demoEmailSuccess: ''
@@ -700,33 +703,41 @@ export default {
     transitionend() {
       this.showModal = false;
     },
+    getDemoModalClose(){
+      this.getDemoModal = false;
+      this.demoEmail = '';
+    },
+    demoResponse(value){
+      this.demoEmailSuccess = value;
+    },
     getDemo(){
-      this.demoEmailError = '';
-      this.demoEmailSuccess = '';
-      if(!this.demoEmail){
-        this.demoEmailError = "Enter your email address first.";
-        return;
-      }
+      this.getDemoModal = true;
+      // this.demoEmailError = '';
+      // this.demoEmailSuccess = '';
+      // if(!this.demoEmail){
+      //   this.demoEmailError = "Enter your email address first.";
+      //   return;
+      // }
 
-      let formData = new FormData();
+      // let formData = new FormData();
 
-      formData.append('email', this.demoEmail);
-      formData.append('subject', 'New Demo Request.');
-      formData.append('message',  this.demoEmail + ' has requested a demo.');
-      formData.append('to', 'info@recordtime.com.au');
-      formData.append('for', 'demo');
+      // formData.append('email', this.demoEmail);
+      // formData.append('subject', 'New Demo Request.');
+      // formData.append('message',  this.demoEmail + ' has requested a demo.');
+      // formData.append('to', 'info@recordtime.com.au');
+      // formData.append('for', 'demo');
             
-      axios.post('https://recordtimeapp.com.au/backend/api/rt-frontend/send/mail',formData).then((res) => {
-        if(res.data.status){
-          this.demoEmailSuccess = res.data.message;
-          this.demoEmail = '';
-        }else{
-          this.demoEmailError = res.data.message;
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      })
+      // axios.post('https://recordtimeapp.com.au/backend/api/rt-frontend/send/mail',formData).then((res) => {
+      //   if(res.data.status){
+      //     this.demoEmailSuccess = res.data.message;
+      //     this.demoEmail = '';
+      //   }else{
+      //     this.demoEmailError = res.data.message;
+      //   }
+      // })
+      // .catch((error) => {
+      //   console.log(error);
+      // })
     }
   }
 }

@@ -19,7 +19,7 @@
           <div class="hidden-md-and-down ml-md-14">
             <a v-for="(item, index) in navItems" :key="index" class="nav-link pr-md-8"
                :class="item.linkTo === $route.name ? 'route-active': ''"
-               v-if="item.isMainNavItem" @click="$router.push({ name: item.linkTo, params: { id: item.linkParams }})">
+                @click="$router.push({ name: item.linkTo, params: { id: item.linkParams }})">
               {{item.title}}
             </a>
           </div>
@@ -29,12 +29,7 @@
           <a @click="signIn()" class="sign-in-link mr-8 hidden-xs-only">
             Sign In
           </a>
-          <primary-btn @click="$router.push(
-          { name: 'about',
-            params: {
-              navigateToFormOnMobile: true
-            }
-          })"/>
+          <primary-btn @click="link('https://www.recordtimeapp.com.au/backend/registration')" />
         </v-container>
       </v-app-bar>
       <!-- App bar -->
@@ -122,6 +117,7 @@
           { title: "About Us", isMainNavItem: true, linkTo: 'about'},
           { title: "Features", isMainNavItem: true, linkTo: 'features'},
           { title: "Pricing", isMainNavItem: true, linkTo: 'pricing'},
+          { title: "Our Blogs", isMainNavItem: true, linkTo: 'blog'},
           { title: "FAQs", isMainNavItem: true, linkTo: 'faq'},
           { title: "Contact", isMainNavItem: true, linkTo: 'contact'}
         ]
@@ -133,6 +129,9 @@
       },
       signIn(){
         window.open('https://www.recordtimeapp.com.au/backend/login', '_blank');
+      },
+      link(value){
+        window.open(value, '_blank');
       }
     }
   }

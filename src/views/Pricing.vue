@@ -6,7 +6,6 @@
       </template>
 
       <template v-slot:subTitle>
-       From as little as a 1$ a day.
         Please sign up  <a href="https://www.recordtimeapp.com.au/backend/registration" target="_blank">here</a> to view custom plans to suit your needs.
       </template>
 

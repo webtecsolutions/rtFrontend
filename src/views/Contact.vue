@@ -28,14 +28,17 @@
             </v-col>
 
             <v-col :md="$vuetify.breakpoint.xsOnly ? 12 : 6" cols="12" class="right-col">
-              <v-text-field v-model="contactNo" label="Contact no" outlined required/>
+              <v-text-field type="number" v-model="contactNo" label="Contact no" outlined required/>
             </v-col>
           </v-row>
 
           <v-row no-gutters class="form-row">
             <v-textarea v-model="message" label="Enquiry" :rules="messageRules" outlined required/>
           </v-row>
-
+          <vue-recaptcha sitekey="6LfBKJEbAAAAAIN-jSbhyCz63gp8AmoSvX8HwwnA" :loadRecaptchaScript="true">
+          </vue-recaptcha>
+          <vue-recaptcha sitekey="6LfBKJEbAAAAAMx4G9IGp2W_KNWVQ8wcWy2XbpR8" :loadRecaptchaScript="true">
+          </vue-recaptcha>
           <v-btn elevation="0" color="secondary" width="200" height="42" :block="$vuetify.breakpoint.xsOnly"
                  :disabled="!valid" @click="validate">
             Submit Request
@@ -182,6 +185,7 @@
 // @ is an alias to /src
 import LandingBanner from '@/components/LandingBanner.vue';
 import axios from 'axios';
+import VueRecaptcha from 'vue-recaptcha';
 
 export default {
   metaInfo: {
@@ -193,7 +197,7 @@ export default {
     ]
   },
   components: {
-    LandingBanner
+    LandingBanner,VueRecaptcha
   },
   data() {
     return {
@@ -229,13 +233,15 @@ export default {
         formData.append('subject', 'Contact us');
         formData.append('contact_no', this.contactNo);
         formData.append('message',  this.message);
-        formData.append('to', 'info@recordtime.com.au');
-        formData.append('for', 'contact');
+        formData.append('to', 'thebasswe5@gmail.com');
               
         axios.post('https://recordtimeapp.com.au/backend/api/rt-frontend/send/mail',formData).then((res) => {
           if(res.data.status){
             this.demoEmailSuccess = res.data.message;
-            this.demoEmail = '';
+            this.email = '';
+            this.name = '';
+            this.contactNo = '';
+            this.message = '';
           }else{
             this.demoEmailError = res.data.message;
           }

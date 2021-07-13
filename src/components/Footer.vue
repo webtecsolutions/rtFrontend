@@ -2,9 +2,9 @@
   <v-footer class="footer-with-nav" color="transparent">
     <v-container>
       <v-layout justify-start column align-center fill-height class="app-store-banner">
-        <img src="../assets/Footer/shape-1.svg" class="shape-1">
+        <!-- <img src="../assets/Footer/shape-1.svg" class="shape-1">
         <img src="../assets/Footer/shape-2.svg" class="shape-2">
-        <img src="../assets/Footer/shape-3.svg" class="shape-3">
+        <img src="../assets/Footer/shape-3.svg" class="shape-3"> -->
 
         <p class="text-uppercase">CHECK OUT OUR MOBILE APPS</p>
         <h2>Download the Record Time App Today:</h2>
@@ -73,7 +73,7 @@
         </v-col>
 
         <v-col sm="12" md="2" cols="12" class="sitemap-col hidden-sm-and-down">
-          <h3>Resource</h3>
+          <h3>Resources</h3>
 
           <ul class="mt-6">
             <li @click="$router.push({ name: 'contact'})">Contact Us</li>
@@ -106,6 +106,11 @@
                 <v-icon :color="hover ? '#00c8d8' : '#8298a8'" size="30">{{ mdiTwitter }}</v-icon>
               </v-avatar>
             </v-hover>
+            <v-hover v-slot:default="{ hover }" style="margin-left: 10px;">
+              <v-avatar size="40" @click="link('https://www.youtube.com/channel/UCXq1gBEIy4P4FXjYf9ZLd-w/featured')">
+                <v-icon :color="hover ? '#00c8d8' : '#8298a8'" size="30">{{ mdiYoutube }}</v-icon>
+              </v-avatar>
+            </v-hover>
           </div>
         </v-col>
 
@@ -127,7 +132,7 @@
 
             <v-expansion-panel>
               <v-expansion-panel-header :expand-icon="mdiPlus" class="pl-0">
-                Resource
+                Resources
               </v-expansion-panel-header>
               <v-expansion-panel-content>
                 <ul>
@@ -157,6 +162,9 @@
                   </v-avatar>
                   <v-avatar size="40" @click="link('https://twitter.com/recordtimeappau')">
                     <v-icon color="#8298a8" size="30">{{ mdiTwitter }}</v-icon>
+                  </v-avatar>
+                  <v-avatar size="40" @click="link('https://www.youtube.com/channel/UCXq1gBEIy4P4FXjYf9ZLd-w/featured')" style="margin-left: 10px;">
+                    <v-icon color="#8298a8" size="30">{{ mdiYoutube }}</v-icon>
                   </v-avatar>
                 </div>
               </v-expansion-panel-content>
@@ -533,7 +541,7 @@
 
 <script>
 // @ is an alias to /src
-import {mdiFacebook , mdiGoogle, mdiInstagram, mdiTwitter, mdiPlus, mdiPlay} from '@mdi/js';
+import {mdiFacebook , mdiGoogle, mdiInstagram, mdiTwitter, mdiPlus, mdiPlay, mdiYoutube} from '@mdi/js';
 import VideoModal from '@/components/VideoModal.vue';
 
 
@@ -549,6 +557,7 @@ export default {
       mdiPlus: mdiPlus,
       mdiPlay: mdiPlay,
       mdiGoogle: mdiGoogle,
+      mdiYoutube: mdiYoutube,
       showModal: false
     }
   },

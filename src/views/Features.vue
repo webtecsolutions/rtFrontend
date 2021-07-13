@@ -65,8 +65,7 @@
         <h2>Our Popular Features</h2>
 
         <p>
-          Our solution is suitable for a wide variety of industries,
-          where paperwork and dockets are utilized. Below are some of the key features:
+          Below are some of the important features of Record TIME
         </p>
 
         <v-row no-gutters class="feature-list-container">
